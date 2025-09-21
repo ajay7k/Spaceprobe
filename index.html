@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spaceprobe Pvt. Ltd. | Space-weather, Plasma & Aeronomy Center for Exploration</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css"> <!-- For Navbar & Footer -->
+    <link rel="stylesheet" href="cards.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- Chart.js & Dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment"></script>
+    
+    <!-- JavaScript Files -->
+    <script src="js/navbar.js" defer></script>
+    <script src="js/modal.js" defer></script>
+
+
+    
+    <!-- Header & Footer Loader -->
+    <script src="js/common.js" defer></script>
+
+
+
+
+       <!-- JS Dependencies -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Galactic Trails CSS -->
+  <!-- <link rel="stylesheet" href="galactic-trails.css" />  -->
+</head>
+
+
+<body>
+
+
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
+
+  <!-- Background Canvas -->
+  <canvas id="galactic-canvas"></canvas>
+
+
+
+  <section class="hero-section">
+    <div class="hero-content slide-in">
+      <div class="hero-top">
+        <!-- <p class="hero-welcome">We are!</p> -->
+        <div class="hero-logo">
+          <img src="logo/logo.png" alt="SPACEBUD Logo">
+        </div>
+      </div>
+  
+      <!-- Button -->
+      <!-- <button id="open-modal" class="hero-btn">Know More</button> -->
+    </div>
+  </section>
+  
+  <!-- Dropdown Section -->
+<div class="dropdown-section">
+  <button class="dropdown-toggle">Know More ▼</button>
+
+  <div class="dropdown-card">
+    <!-- Twinkling stars -->
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+
+    <!-- Description -->
+    <p class = "par">
+              SpaceProbe Pvt Ltd is a pioneering company founded with the mission to bridge the gap between cutting-edge 
+              research and real-world applications. We are dedicated to developing innovative tools and services that empower 
+              communities, industries, and institutions.
+                </p>
+                <p class = "par">
+              Our expertise spans space weather alerts and forecasting, geospatial intelligence through GIS and remote sensing, 
+              and advanced technological solutions, all designed to promote sustainable growth and informed decision-making.
+            </p>
+            <p class = "par">
+              Beyond technology, we are equally committed to nurturing a scientific temperament in society. Through science outreach, 
+              exhibitions, corporate events, workshops, training schools, and citizen science programs, we strive to make science more 
+              accessible and engaging for all.
+                </p>
+              <p class = "par">  
+              By uniting scientific expertise with technological innovation, SpaceProbe seeks to build a strong ecosystem where 
+              knowledge, exploration, and application move together, helping communities not just understand space but truly benefit 
+              from it.
+            </p>
+  </div>
+</div>
+
+  
+  
+
+
+<section class="services-section">
+  <h2 class="section-title">What We Do</h2>
+  <div class="centered">
+
+    <!-- Mission Card -->
+    <a href="https://example.com/mission" style="text-decoration: none; color: inherit;">
+      <div class="card border-right-behind border-bottom-behind">
+        <div class="shadow" style="--url: url('https://i.ibb.co/DC0MbxS/m-full.png')"></div>
+        <div class="image background" style="--url: url('https://i.ibb.co/ZdGBm4K/m-background.png')"></div>
+        <div class="image cutout">
+          <img src="https://i.ibb.co/RC70XmC/m-cutout.png" alt="Mission">
+        </div>
+        <div class="content top">
+          <h2>Mission</h2>
+          <p>Discover new frontiers</p>
+        </div>
+      </div>
+    </a>
+
+    <!-- Base Card 1 -->
+    <a href="https://example.com/base" style="text-decoration: none; color: inherit;">
+      <div class="card border-left-behind">
+        <div class="shadow" style="--url: url('https://i.ibb.co/gSBp82C/b-full.png')"></div>
+        <div class="image background" style="--url: url('https://i.ibb.co/MDBcyMW/b-background.png')"></div>
+        <div class="image cutout">
+          <img src="https://i.ibb.co/bQNgD6y/b-cutout.png" alt="Base">
+        </div>
+        <div class="content top">
+          <h2>Base</h2>
+          <p>Explore base structures</p>
+        </div>
+      </div>
+    </a>
+
+    <!-- Base Card 2 (duplicate placeholder — you can swap images/text later) -->
+    <a href="https://example.com/base2" style="text-decoration: none; color: inherit;">
+      <div class="card border-left-behind">
+        <div class="shadow" style="--url: url('https://i.ibb.co/gSBp82C/b-full.png')"></div>
+        <div class="image background" style="--url: url('https://i.ibb.co/MDBcyMW/b-background.png')"></div>
+        <div class="image cutout">
+          <img src="https://i.ibb.co/bQNgD6y/b-cutout.png" alt="Base 2">
+        </div>
+        <div class="content top">
+          <h2>Base</h2>
+          <p>Expand base facilities</p>
+        </div>
+      </div>
+    </a>
+
+    <!-- Space Weather / Analysis Card -->
+    <a href="https://example.com/analysis" style="text-decoration: none; color: inherit;">
+      <div class="card border-left-behind">
+        <div class="shadow" style="--url: url('/img/space_weather.jpg')"></div>
+        <div class="image background" style="--url: url('/img/space_weather.jpg')"></div>
+        <div class="image cutout">
+          <img src="/img/analysis.png" alt="Analysis">
+        </div>
+        <div class="content top">
+          <h2>Space Weather Alerts</h2>
+          <p>Stay updated with the latest solar flares, geomagnetic storms, and other space weather events that could impact Earth and space missions.</p>
+        </div>
+      </div>
+    </a>
+
+    <!-- Rover Card -->
+    <a href="https://example.com/rover" style="text-decoration: none; color: inherit;">
+      <div class="card border-left-behind">
+        <div class="shadow" style="--url: url('/img/rover.png')"></div>
+        <div class="image background" style="--url: url('/img/backround.jpg')"></div>
+        <div class="image cutout">
+          <img src="/img/rover.png" alt="Rover">
+        </div>
+        <div class="content top">
+          <h2>Rover</h2>
+          <p>Explore the Mars Rover</p>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+
+  
+
+  <!-- Footer -->
+<div id="footer-container"></div>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const slideInElements = document.querySelectorAll(".slide-in");
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target); // One-time animation
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        slideInElements.forEach(el => observer.observe(el));
+    });
+</script>
+
+</body>
+
+
+  <!-- Galactic Trails JS -->
+  <script src="js/galactic-trails.js"></script>
+  <script src="cards.js"></script>
+
+
+
+</html>

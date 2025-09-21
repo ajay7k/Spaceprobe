@@ -1,0 +1,326 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* === FULLSCREEN BACKGROUND CANVAS === */
+#galactic-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;   /* keeps it behind everything */
+  /* display: block; */
+}
+
+/* === BASE STYLES === */
+body {
+  background: #121212;
+  margin: 0;
+  overflow-x: hidden;   /* hide horizontal */
+  overflow-y: auto;     /* allow vertical scroll */
+}
+
+/* People Sections */
+.people-section {
+    margin-top: 100px;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+/* Section Titles */
+.people-section h2 {
+    font-size: 28px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+/* Different Colors for Each Section */
+h2 {
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.3);
+}
+
+h2.professor-title { color: #ff6600; } /* Professor - Orange */
+h2.phd-title { color: #ffcc00; } /* PhD Students - Yellow */
+h2.masters-title { color: #33cc33; } /* Masters Students - Green */
+h2.alumni-title { color: #0099ff; } /* Alumni - Blue */
+
+/* People Cards */
+.people-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.person-card {
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    padding: 20px;
+    width: 280px;
+    border-radius: 10px;
+    font-size: 14px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    margin-bottom: 40px;
+}
+
+.professor {
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    padding: 20px;
+    width: 280px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    margin-bottom: 40px;
+}
+
+.person-card {
+    position: relative;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.person-card:hover {
+    transform: scale(1.05);
+}
+
+/* Invisible link covering the card */
+.card-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;  /* Places link above other elements */
+}
+
+
+/* Hover Effects */
+.person-card:hover {
+    transform: scale(1.05);
+}
+
+/* Section-based glow effect */
+.professor:hover {
+    box-shadow: 0px 0px 15px rgba(255, 102, 0, 0.8); /* Orange Glow */
+}
+
+.phd:hover {
+    box-shadow: 0px 0px 15px rgba(255, 204, 0, 0.8); /* Yellow Glow */
+}
+
+.phd-4:hover {
+    box-shadow: 0px 0px 15px rgba(255, 204, 0, 0.8); /* Yellow Glow */
+}
+
+.masters:hover {
+    box-shadow: 0px 0px 15px rgba(51, 204, 51, 0.8); /* Green Glow */
+}
+
+.alumni:hover {
+    box-shadow: 0px 0px 15px rgba(0, 153, 255, 0.8); /* Blue Glow */
+}
+
+/* Profile Images */
+.person-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 3px solid white;
+}
+
+/* Social Icons */
+
+
+/* Keep social icons clickable */
+
+.social-icons {
+    position: relative;
+    z-index: 2;  /* Places icons above the invisible link */
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+
+.social-icons li {
+    list-style: none;
+    margin: 0 5px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+/* Social Icons Hover Colors */
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+.social-icons li:nth-child(1) a:hover { color: #4267B2; } /* Facebook */
+.social-icons li:nth-child(2) a:hover { color: #333; } /* GitHub */
+.social-icons li:nth-child(3) a:hover { color: #E1306C; } /* Instagram */
+.social-icons li:nth-child(4) a:hover { color: #4285F4; } /* Google Scholar */
+.social-icons li:nth-child(5) a:hover { color: #ffe600; } /* Email */
+.social-icons li:nth-child(6) a:hover { color: #4CAF50; } /* ResearchGate */
+.social-icons li:nth-child(7) a:hover { color: #2867B2; } /* LinkedIn */
+
+/* Professor-specific Social Media */
+.professor .social-icons li:nth-child(3) { display: none; } /* Hide Instagram */
+.professor .social-icons li:nth-child(2) { display: none; } 
+
+
+/* PhD-specific Social Media */
+.phd .social-icons li:nth-child(6) a:hover { color: #4CAF50; } /* ResearchGate */
+.phd .social-icons li:nth-child(4) a:hover { color: #4285F4; } /* Google Scholar */
+.phd .social-icons li:nth-child(2) { display: none; }
+.phd-4 .social-icons li:nth-child(4) { display: none; }
+.phd-4 .social-icons li:nth-child(6) { display: none; }
+
+.phd-5 .social-icons li:nth-child(2) { display: none; }
+.phd-5 .social-icons li:nth-child(4) { display: none; }
+.phd-5 .social-icons li:nth-child(6) { display: none; }
+
+
+.masters .social-icons li:nth-child(1) { display: none; } /* ResearchGate */
+.masters .social-icons li:nth-child(2) { display: none; }
+
+/* Footer Styles */
+.footer {
+    background-color: #121212;
+    color: #fff;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Footer Logo */
+.footer-logo img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* Footer Links */
+.footer-links {
+    flex: 1;
+    min-width: 200px;
+    margin: 20px;
+}
+
+.footer-links h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #fff;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin: 8px 0;
+}
+
+.footer-links ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: #f4b400;
+}
+
+/* Footer Contact */
+.footer-contact {
+    flex: 1;
+    min-width: 200px;
+    margin: 20px;
+}
+
+.footer-contact h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #fff;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.footer-contact p {
+    margin: 5px 0;
+    color: #ccc;
+}
+
+.footer-contact a {
+    color: #f4b400;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-contact a:hover {
+    color: #fff;
+}
+
+/* Social Media Icons */
+.social-icons-footer {
+    margin-top: 10px;
+}
+
+.social-icons-footer a {
+    color: #f4b400;
+    font-size: 22px;
+    margin: 0 15px;
+    transition: transform 0.3s ease, color 0.3s;
+}
+
+.social-icons-footer a:hover {
+    color: #fff;
+    transform: scale(1.2);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
+    background-color: #000;
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links,
+    .footer-contact {
+        margin-bottom: 20px;
+    }
+}
