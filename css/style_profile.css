@@ -1,82 +1,88 @@
-/* Global Reset */
+/* ===========================
+   Global Reset & Base Styles
+=========================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body Styles */
 body {
     background: url('../img/background.jpg') no-repeat center center fixed;
     background-size: cover;
-    color: white;
-    font-family: Arial, sans-serif;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #f5f5f5;
     position: relative;
+    line-height: 1.6;
 }
 
-
+/* ===========================
+   Profile Container Layout
+=========================== */
 .profile-container {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    gap: 50px; /* Adjusts space between image and text */
-    padding: 40px 100px; /* Adds space from left & right */
-    padding-top: 100px;
+    gap: 60px;
+    padding: 60px 100px;
+    padding-top: 120px;
 }
 
-
-
-/* Left Section (Photo, Affiliation, Social Links) */
+/* ===========================
+   Left Section (Photo, Affiliation, Socials)
+=========================== */
 .profile-left {
     display: flex;
-    position: relative;
-    max-width: 350px;
-    text-align: center;
-    font-size: 12px;
-    padding: 20px;
     flex-direction: column;
-    align-items: center; /* Centers everything */
-    justify-content: center;
-    margin: 0 auto; /* Centers the whole section */
+    align-items: center;
+    max-width: 320px;
+    text-align: center;
+    padding: 20px;
 }
 
 /* Profile Image */
 .profile-left img {
     width: 100%;
-    max-width: 200px;
-    border-radius: 10px;
-    border: 3px solid rgba(255, 255, 255, 0.5); /* White border */
-    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2); /* Soft glow effect */
+    max-width: 220px;
+    border-radius: 12px;
+    border: 3px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0px 0px 18px rgba(255, 255, 255, 0.25);
+    transition: transform 0.3s ease-in-out;
 }
 
-/* Name Tag (Now Below the Photo) */
+.profile-left img:hover {
+    transform: scale(1.03);
+}
+
+/* Name Tag */
 .name-tag {
-    margin-top: 15px; /* Adds space below the image */
-    background: rgba(247, 148, 0, 0.541);
+    margin-top: 18px;
+    background: rgba(230, 57, 70, 0.85);
     color: white;
     font-weight: bold;
-    padding: 8px 16px;
+    padding: 10px 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
     font-size: 15px;
-    text-align: center;
-    width: max-content;
 }
 
 /* Affiliation */
 .affiliation {
     font-size: 14px;
     margin-top: 10px;
-    font-weight: bold;
-    text-align: center;
+    font-weight: 600;
+    color: #f0f0f0;
 }
 
-/* Social Icons */
+/* ===========================
+   Social Icons
+=========================== */
 .social-icons {
-    margin-top: 10px;
+    margin-top: 14px;
     display: flex;
     justify-content: center;
-    gap: 10px;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
 .social-icons a {
@@ -86,13 +92,12 @@ body {
 }
 
 .social-icons a:hover {
-    color: lightblue;
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 
-/* Social Icons Hover Colors */
+/* Hover Colors */
 .social-icons a:nth-child(1):hover { color: #4267B2; } /* Facebook */
-.social-icons a:nth-child(2):hover { color: #333; } /* GitHub */
+.social-icons a:nth-child(2):hover { color: #333; }   /* GitHub */
 .social-icons a:nth-child(3):hover { color: #E1306C; } /* Instagram */
 .social-icons a:nth-child(4):hover { color: #4285F4; } /* Google Scholar */
 .social-icons a:nth-child(5):hover { color: #ffe600; } /* Email */
@@ -100,32 +105,90 @@ body {
 .social-icons a:nth-child(7):hover { color: #2867B2; } /* LinkedIn */
 .social-icons a:nth-child(8):hover { color: #00ff9d; } /* CV */
 
+/* Example conditional hiding */
 .professor .social-icons a:nth-child(3) { display: none; } /* Hide Instagram */
-.phd3 .social-icons a:nth-child(2) { display: none; } /* Hide Instagram */
+.phd3 .social-icons a:nth-child(2) { display: none; }      /* Hide GitHub */
 
-/* Right Section (Bio & Content) */
+/* ===========================
+   Right Section (Bio & Content)
+=========================== */
 .profile-right {
     flex: 2;
-    padding-left: 100px;
-    padding-right: 200px;
-    color: white;
+    padding: 0 40px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    padding: 40px;
 }
 
+/* Headings */
+.profile-right h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    border-left: 6px solid #e63946;
+    padding-left: 12px;
+    color: #ffffff;
+}
 
+.profile-right h3 {
+    font-size: 1.4rem;
+    margin: 25px 0 15px;
+    color: #ff6b6b;
+}
+
+/* Paragraphs */
 .profile-right p {
     text-align: justify;
-    font-size: 14px;
-    line-height: 1.6;
-    margin-bottom: 15px; /* Adds space between paragraphs */
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 15px;
 }
 
+/* Lists */
+.profile-right ul {
+    list-style: none;
+    padding-left: 0;
+}
 
-/* Responsive Layout */
+.profile-right ul li {
+    margin: 10px 0;
+    padding-left: 26px;
+    position: relative;
+}
+
+.profile-right ul li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #ff6b6b;
+    font-weight: bold;
+}
+
+/* Closing paragraph style */
+.profile-right .closing {
+    margin-top: 1rem;
+    font-style: italic;
+    color: #dcdcdc;
+}
+
+/* ===========================
+   Responsive Layout
+=========================== */
+@media screen and (max-width: 992px) {
+    .profile-container {
+        gap: 40px;
+        padding: 50px 40px;
+    }
+
+    .profile-right {
+        padding: 30px;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .profile-container {
         flex-wrap: wrap;
-        align-items: center;
-        text-align: center;
+        justify-content: center;
         padding: 40px 20px;
         padding-top: 100px;
     }
@@ -135,8 +198,29 @@ body {
     }
 
     .profile-right {
-        padding: 20px;
+        padding: 25px;
+    }
+
+    .profile-right h2 {
+        font-size: 1.5rem;
+    }
+
+    .profile-right h3 {
+        font-size: 1.2rem;
     }
 }
 
+@media screen and (max-width: 480px) {
+    .profile-right {
+        padding: 20px;
+    }
 
+    .name-tag {
+        font-size: 14px;
+        padding: 8px 14px;
+    }
+
+    .social-icons a {
+        font-size: 18px;
+    }
+}
