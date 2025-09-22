@@ -1,0 +1,142 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    background: url('../img/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px; /* Adjusts space between image and text */
+    padding: 40px 100px; /* Adds space from left & right */
+    padding-top: 100px;
+}
+
+
+
+/* Left Section (Photo, Affiliation, Social Links) */
+.profile-left {
+    display: flex;
+    position: relative;
+    max-width: 350px;
+    text-align: center;
+    font-size: 12px;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center; /* Centers everything */
+    justify-content: center;
+    margin: 0 auto; /* Centers the whole section */
+}
+
+/* Profile Image */
+.profile-left img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 10px;
+    border: 3px solid rgba(255, 255, 255, 0.5); /* White border */
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2); /* Soft glow effect */
+}
+
+/* Name Tag (Now Below the Photo) */
+.name-tag {
+    margin-top: 15px; /* Adds space below the image */
+    background: rgba(247, 148, 0, 0.541);
+    color: white;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 15px;
+    text-align: center;
+    width: max-content;
+}
+
+/* Affiliation */
+.affiliation {
+    font-size: 14px;
+    margin-top: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Social Icons */
+.social-icons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 20px;
+    transition: 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+    color: lightblue;
+    transform: scale(1.1);
+}
+
+/* Social Icons Hover Colors */
+.social-icons a:nth-child(1):hover { color: #4267B2; } /* Facebook */
+.social-icons a:nth-child(2):hover { color: #333; } /* GitHub */
+.social-icons a:nth-child(3):hover { color: #E1306C; } /* Instagram */
+.social-icons a:nth-child(4):hover { color: #4285F4; } /* Google Scholar */
+.social-icons a:nth-child(5):hover { color: #ffe600; } /* Email */
+.social-icons a:nth-child(6):hover { color: #4CAF50; } /* ResearchGate */
+.social-icons a:nth-child(7):hover { color: #2867B2; } /* LinkedIn */
+.social-icons a:nth-child(8):hover { color: #00ff9d; } /* CV */
+
+.professor .social-icons a:nth-child(3) { display: none; } /* Hide Instagram */
+.phd3 .social-icons a:nth-child(2) { display: none; } /* Hide Instagram */
+
+/* Right Section (Bio & Content) */
+.profile-right {
+    flex: 2;
+    padding-left: 100px;
+    padding-right: 200px;
+    color: white;
+}
+
+
+.profile-right p {
+    text-align: justify;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 15px; /* Adds space between paragraphs */
+}
+
+
+/* Responsive Layout */
+@media screen and (max-width: 768px) {
+    .profile-container {
+        flex-wrap: wrap;
+        align-items: center;
+        text-align: center;
+        padding: 40px 20px;
+        padding-top: 100px;
+    }
+
+    .profile-left {
+        max-width: 100%;
+    }
+
+    .profile-right {
+        padding: 20px;
+    }
+}
+
+

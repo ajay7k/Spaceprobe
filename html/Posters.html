@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posters</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../css/style_posters.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+    <!-- Scripts -->
+    <script src="../js/posters.js" defer></script>
+
+    <!-- for header and footer -->
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <script src="../js/common.js" defer></script>
+
+
+</head>
+<body>
+
+
+        <!-- Navbar -->
+<div id="navbar-container"></div>
+
+
+<!-- Posters Section -->
+<section class="posters">
+    <h1>Posters Exhibition</h1>
+    <div class="poster-gallery">
+        <div class="poster" onclick="openModal('../Posters/shubham.png')">
+            <img src="../Posters/shubham.png" alt="Poster 1">
+        </div>
+
+        <div class="poster" onclick="openModal('../Posters/Slide2.png')">
+            <img src="../Posters/Slide2.png" alt="Poster 2">
+        </div>
+
+        <div class="poster" onclick="openModal('../Posters/finall poster science day urvi.png')">
+            <img src="../Posters/finall poster science day urvi.png" alt="Poster 3">
+        </div>
+
+        <div class="poster" onclick="openModal('../Posters/Ganesh.png')">
+            <img src="../Posters/Ganesh.png" alt="Poster 4">
+        </div>
+    </div>
+</section>
+
+<!-- Modal for Enlarged Poster View -->
+<div id="posterModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImg">
+    
+<!-- Zoom Controls -->
+<div class="zoom-controls">
+    <button onclick="zoomIn()"><i class="fas fa-search-plus"></i></button>
+    <button onclick="zoomOut()"><i class="fas fa-search-minus"></i></button>
+    <button onclick="resetZoom()"><i class="fas fa-undo"></i></button>
+</div>
+</div>
+
+
+<!-- Footer -->
+<div id="footer-container"></div>
+
+</body>
+</html>
