@@ -1,0 +1,1146 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:300,400,500,700');
+
+/* ============================================
+   KEYFRAME ANIMATIONS
+   ============================================ */
+
+@keyframes rocket-movement {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(1200px, -600px); }
+}
+
+@keyframes spin-earth {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-360deg); }
+}
+
+@keyframes move-astronaut {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-160px, -160px); }
+}
+
+@keyframes rotate-astronaut {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-720deg); }
+}
+
+@keyframes glow-star {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes work-movement {
+    0%, 100% { transform: translate(0, 0) rotate(-5deg); }
+    25% { transform: translate(10px, -10px) rotate(0deg); }
+    50% { transform: translate(20px, -5px) rotate(5deg); }
+    75% { transform: translate(10px, 10px) rotate(0deg); }
+}
+
+@keyframes float-station {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-30px) rotate(3deg); }
+}
+
+@keyframes float-crane {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-25px) rotate(-2deg); }
+}
+
+@keyframes spin-tool {
+    0% { transform: rotate(0deg) translateY(0px); }
+    50% { transform: rotate(180deg) translateY(-20px); }
+    100% { transform: rotate(360deg) translateY(0px); }
+}
+
+@keyframes spin-tool-2 {
+    0% { transform: rotate(0deg) translateX(0px) scale(1); }
+    50% { transform: rotate(-180deg) translateX(15px) scale(1.1); }
+    100% { transform: rotate(-360deg) translateX(0px) scale(1); }
+}
+
+@keyframes weld-glow {
+    0%, 100% { 
+        filter: drop-shadow(0 0 5px rgba(255, 203, 57, 0.5));
+        transform: rotate(0deg);
+    }
+    50% { 
+        filter: drop-shadow(0 0 15px rgba(255, 203, 57, 1));
+        transform: rotate(10deg);
+    }
+}
+
+@keyframes toolbox-bob {
+    0%, 100% { transform: translateY(0) rotate(-2deg); }
+    50% { transform: translateY(-15px) rotate(2deg); }
+}
+
+@keyframes parts-drift {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(20px, -10px) rotate(45deg); }
+    50% { transform: translate(30px, 5px) rotate(90deg); }
+    75% { transform: translate(15px, 15px) rotate(135deg); }
+}
+
+@keyframes sign-sway {
+    0%, 100% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+}
+
+@keyframes helmet-spin {
+    0% { transform: rotateY(0deg) translateY(0); }
+    50% { transform: rotateY(180deg) translateY(-10px); }
+    100% { transform: rotateY(360deg) translateY(0); }
+}
+
+@keyframes tablet-float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-12px) rotate(-5deg); }
+}
+
+@keyframes barrier-glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(255, 203, 57, 0.5); }
+    50% { box-shadow: 0 0 40px rgba(255, 203, 57, 1), 0 0 60px rgba(255, 203, 57, 0.5); }
+}
+
+@keyframes cone-wobble {
+    0%, 100% { transform: rotate(0deg) translateY(0); }
+    25% { transform: rotate(3deg) translateY(-5px); }
+    75% { transform: rotate(-3deg) translateY(-3px); }
+}
+
+@keyframes warning-blink {
+    0%, 45% { 
+        opacity: 1; 
+        box-shadow: 0 0 20px rgba(255, 107, 53, 0.8);
+    }
+    50%, 95% { 
+        opacity: 0.3; 
+        box-shadow: 0 0 5px rgba(255, 107, 53, 0.3);
+    }
+}
+
+@keyframes spark {
+    0% { 
+        opacity: 1; 
+        transform: translate(0, 0) scale(1); 
+    }
+    100% { 
+        opacity: 0; 
+        transform: translate(var(--tx), var(--ty)) scale(0.2); 
+    }
+}
+
+@keyframes glow-title {
+    0%, 100% { text-shadow: 0 0 20px rgba(255, 203, 57, 0.6); }
+    50% { text-shadow: 0 0 40px rgba(255, 203, 57, 1), 0 0 60px rgba(255, 203, 57, 0.5); }
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Dosis', sans-serif;
+    font-weight: 300;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.bg-purple {
+    background: url(http://salehriaz.com/404Page/img/bg_purple.png);
+    background-repeat: repeat-x;
+    background-size: cover;
+    background-position: left top;
+    height: 100%;
+    position: relative;
+}
+
+/* ============================================
+   INTERACTIVE OBJECT STYLES
+   ============================================ */
+
+.interactive-object,
+.interactive-barrier {
+    cursor: pointer;
+    pointer-events: auto !important;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.interactive-object:hover,
+.interactive-barrier:hover {
+    transform: scale(1.1) rotate(5deg) !important;
+    filter: brightness(1.2) drop-shadow(0 0 20px rgba(255, 203, 57, 0.6));
+}
+
+.interactive-object.avoid,
+.interactive-barrier.avoid {
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+
+.custom-navbar {
+    padding: 15px 0;
+    position: relative;
+    z-index: 1000;
+}
+
+.brand-logo {
+    margin-left: 25px;
+    margin-top: 5px;
+    display: inline-block;
+}
+
+.navbar-links {
+    display: inline-block;
+    float: right;
+    margin-right: 15px;
+    text-transform: uppercase;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+li {
+    float: left;
+    padding: 0 15px;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-size: 12px;
+    transition: all 0.3s ease;
+}
+
+li a:hover {
+    color: #FFCB39;
+}
+
+.btn-request {
+    padding: 10px 25px;
+    border: 1px solid #FFCB39;
+    border-radius: 100px;
+    font-weight: 400;
+}
+
+.btn-request:hover {
+    background-color: #FFCB39;
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================================
+   CENTRAL BODY
+   ============================================ */
+
+.central-body {
+    padding: 15% 5% 10% 5%;
+    text-align: center;
+    position: relative;
+    z-index: 200;
+}
+
+.image-404 {
+    position: relative;
+    z-index: 100;
+    pointer-events: none;
+    margin-bottom: 20px;
+}
+
+.construction-title {
+    color: #FFCB39;
+    font-size: 2.5em;
+    font-weight: 700;
+    letter-spacing: 5px;
+    margin: 20px 0 10px 0;
+    text-shadow: 0 0 20px rgba(255, 203, 57, 0.6),
+                 0 0 40px rgba(255, 203, 57, 0.4);
+    animation: glow-title 2s ease-in-out infinite;
+}
+
+.construction-text {
+    color: #fff;
+    font-size: 1.3em;
+    margin: 15px auto;
+    max-width: 500px;
+    line-height: 1.6;
+}
+
+.btn-go-home {
+    position: relative;
+    z-index: 200;
+    margin: 25px auto;
+    width: 180px;
+    padding: 12px 20px;
+    border: 2px solid #FFCB39;
+    border-radius: 100px;
+    font-weight: 500;
+    display: inline-block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-size: 12px;
+    transition: all 0.3s ease;
+}
+
+.btn-go-home:hover {
+    background-color: #FFCB39;
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 20px 30px rgba(255, 203, 57, 0.4);
+}
+
+/* ============================================
+   STARS BACKGROUND
+   ============================================ */
+
+.stars {
+    background: url(http://salehriaz.com/404Page/img/overlay_stars.svg);
+    background-repeat: repeat;
+    background-size: contain;
+    background-position: left top;
+    height: 100%;
+    position: relative;
+}
+
+.glowing_stars .star {
+    position: absolute;
+    border-radius: 100%;
+    background-color: #fff;
+    width: 3px;
+    height: 3px;
+    opacity: 0.3;
+    will-change: opacity;
+}
+
+.glowing_stars .star:nth-child(1) {
+    top: 80%;
+    left: 25%;
+    animation: glow-star 2s infinite ease-in-out alternate 1s;
+}
+
+.glowing_stars .star:nth-child(2) {
+    top: 20%;
+    left: 40%;
+    animation: glow-star 2s infinite ease-in-out alternate 3s;
+}
+
+.glowing_stars .star:nth-child(3) {
+    top: 25%;
+    left: 25%;
+    animation: glow-star 2s infinite ease-in-out alternate 5s;
+}
+
+.glowing_stars .star:nth-child(4) {
+    top: 75%;
+    left: 80%;
+    animation: glow-star 2s infinite ease-in-out alternate 7s;
+}
+
+.glowing_stars .star:nth-child(5) {
+    top: 90%;
+    left: 50%;
+    animation: glow-star 2s infinite ease-in-out alternate 9s;
+}
+
+/* ============================================
+   ORIGINAL SPACE OBJECTS
+   ============================================ */
+
+.objects img,
+.objects div {
+    z-index: 90;
+}
+
+.object_rocket {
+    z-index: 95;
+    position: absolute;
+    transform: translateX(-50px);
+    top: 75%;
+    animation: rocket-movement 200s linear infinite both running;
+}
+
+.earth-moon {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 90;
+}
+
+.object_earth {
+    position: absolute;
+    /* Use vh and vw units - they scale with viewport */
+    top: 15vh;  /* 15% of viewport height */
+    left: 10vw; /* 10% of viewport width */
+    width: clamp(60px, 8vw, 140px); /* Responsive: min 60px, ideal 8% of width, max 140px */
+    height: auto;
+    z-index: 91;
+    pointer-events: auto;
+    animation: spin-earth 100s infinite linear both;
+    filter: drop-shadow(0 0 20px rgba(74, 144, 226, 0.8));
+}
+
+.object_moon {
+    position: absolute;
+    top: 12%;
+    left: 25%;
+    z-index: 90;
+}
+
+.object_astronaut {
+    animation: rotate-astronaut 200s infinite linear both alternate;
+}
+
+.box_astronaut {
+    z-index: 110;
+    position: absolute;
+    top: 60%;
+    right: 20%;
+    will-change: transform;
+    animation: move-astronaut 50s infinite linear both alternate;
+}
+
+/* ============================================
+   CONSTRUCTION WORKER
+   ============================================ */
+
+.box_worker {
+    position: absolute;
+    top: 8%;
+    left: 5%;
+    z-index: 105;
+    animation: work-movement 6s infinite ease-in-out;
+}
+
+.worker-astronaut {
+    filter: drop-shadow(0 0 10px rgba(255, 203, 57, 0.3));
+}
+
+/* ============================================
+   SPACE STATION
+   ============================================ */
+
+.space-station {
+    position: absolute;
+    top: 15%;
+    right: 15%;
+    z-index: 95;
+    animation: float-station 10s infinite ease-in-out;
+}
+
+.station-construct {
+    filter: drop-shadow(0 0 15px rgba(74, 144, 226, 0.4));
+}
+
+/* ============================================
+   SPACE CRANE
+   ============================================ */
+
+.space-crane {
+    position: absolute;
+    top: 30%;
+    right: 2%;
+    z-index: 95;
+    animation: float-crane 8s infinite ease-in-out;
+}
+
+.crane-svg {
+    filter: drop-shadow(0 0 12px rgba(255, 203, 57, 0.4));
+}
+
+/* ============================================
+   FLOATING TOOLS
+   ============================================ */
+
+.floating-wrench {
+    position: absolute;
+    top: 45%;
+    left: 12%;
+    z-index: 88;
+    animation: spin-tool 12s infinite ease-in-out;
+}
+
+.floating-drill {
+    position: absolute;
+    top: 55%;
+    right: 25%;
+    z-index: 88;
+    animation: spin-tool-2 10s infinite ease-in-out;
+}
+
+.floating-welding {
+    position: absolute;
+    top: 40%;
+    right: 35%;
+    z-index: 88;
+    animation: weld-glow 3s infinite ease-in-out;
+}
+
+.tool-float,
+.tool-float-2,
+.tool-weld {
+    filter: drop-shadow(0 0 8px rgba(192, 192, 192, 0.5));
+}
+
+/* ============================================
+   TOOLBOX
+   ============================================ */
+
+.floating-toolbox {
+    position: absolute;
+    top: 70%;
+    left: 35%;
+    z-index: 88;
+    animation: toolbox-bob 7s infinite ease-in-out;
+}
+
+.toolbox-float {
+    filter: drop-shadow(0 0 10px rgba(255, 203, 57, 0.3));
+}
+
+/* ============================================
+   SATELLITE PARTS
+   ============================================ */
+
+.satellite-parts {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    z-index: 88;
+    animation: parts-drift 15s infinite ease-in-out;
+}
+
+.parts-float {
+    filter: drop-shadow(0 0 12px rgba(74, 144, 226, 0.4));
+}
+
+/* ============================================
+   CONSTRUCTION SIGNS
+   ============================================ */
+
+.construction-sign {
+    position: absolute;
+    z-index: 92;
+    animation: sign-sway 4s infinite ease-in-out;
+}
+
+.sign-1 {
+    top: 65%;
+    left: 60%;
+}
+
+.sign-2 {
+    top: 48%;
+    right: 42%;
+    animation-delay: 1s;
+}
+
+.construction-sign img {
+    filter: drop-shadow(0 0 15px rgba(255, 203, 57, 0.5));
+}
+
+/* ============================================
+   FLOATING HELMET
+   ============================================ */
+
+.floating-helmet {
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    z-index: 88;
+    animation: helmet-spin 20s infinite linear;
+}
+
+.helmet-float {
+    filter: drop-shadow(0 0 10px rgba(232, 244, 248, 0.5));
+}
+
+/* ============================================
+   BLUEPRINT TABLET
+   ============================================ */
+
+.blueprint-tablet {
+    position: absolute;
+    top: 48%;
+    right: 12%;
+    z-index: 88;
+    animation: tablet-float 5s infinite ease-in-out;
+}
+
+.tablet-float {
+    filter: drop-shadow(0 0 15px rgba(74, 144, 226, 0.6));
+}
+
+/* ============================================
+   CONSTRUCTION BARRIERS
+   ============================================ */
+
+.construction-barrier {
+    position: absolute;
+    width: 200px;
+    height: 30px;
+    background: linear-gradient(
+        45deg,
+        #FFCB39 0%, #FFCB39 25%,
+        #000 25%, #000 50%,
+        #FFCB39 50%, #FFCB39 75%,
+        #000 75%, #000 100%
+    );
+    background-size: 40px 40px;
+    border: 3px solid #FFCB39;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(255, 203, 57, 0.5);
+    z-index: 85;
+    animation: barrier-glow 2s infinite;
+}
+
+/* .barrier-1 {
+    top: 82%;
+    left: 15%;
+    transform: rotate(-10deg);
+}
+
+.barrier-2 {
+    top: 82%;
+    right: 15%;
+    transform: rotate(10deg);
+}
+
+.barrier-1::before,
+.barrier-2::before {
+    content: 'CONSTRUCTION ZONE';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #f7f4f4;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px rgba(255, 203, 57, 0.5);
+    white-space: nowrap;
+} */
+
+/* ============================================
+   TRAFFIC CONES
+   ============================================ */
+
+/* ============================================
+   TRAFFIC CONES - FIXED TRAPEZOID BANDS
+   ============================================ */
+
+.traffic-cone {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 60px solid #FF6B35;
+    z-index: 85;
+    animation: cone-wobble 3s infinite ease-in-out;
+    filter: drop-shadow(0 0 10px rgba(255, 107, 53, 0.4));
+}
+
+/* First white band - TRAPEZOID */
+.traffic-cone::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-bottom: 8px solid #fff;
+    top: 15px;
+    left: -9px;
+}
+
+/* Second white band - TRAPEZOID */
+.traffic-cone::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 13px solid transparent;
+    border-right: 13px solid transparent;
+    border-bottom: 8px solid #fff;
+    top: 35px;
+    left: -13px;
+}
+
+
+.cone-1 {
+    bottom: 15%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.cone-2 {
+    bottom: 18%;
+    left: 45%;
+    animation-delay: 0.5s;
+}
+
+.cone-3 {
+    bottom: 18%;
+    right: 30%;
+    animation-delay: 1s;
+}
+
+/* ============================================
+   WELDING SPARKS
+   ============================================ */
+
+.sparks-container {
+    position: absolute;
+    top: 35%;
+    left: 27%;
+    width: 50px;
+    height: 50px;
+    z-index: 106;
+    pointer-events: none;
+}
+
+.spark {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #FFCB39;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #FFCB39, 0 0 20px #FF8C00;
+    animation: spark 1.5s infinite;
+}
+
+/* ============================================
+   WARNING LIGHTS
+   ============================================ */
+
+.warning-light {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #FF6B35;
+    border-radius: 50%;
+    z-index: 85;
+    animation: warning-blink 1s infinite;
+}
+
+.light-1 {
+    top: 23%;
+    right: 14%;
+}
+
+.light-2 {
+    top: 27%;
+    right: 7%;
+    animation-delay: 0.5s;
+}
+
+/* ============================================
+   LARGE SCREENS (Desktop)
+   1200px - 1919px
+   ============================================ */
+
+@media only screen and (min-width: 1200px) and (max-width: 1919px) {
+    .object_earth {
+        width: 120px;
+        top: 20%;
+        left: 15%;
+    }
+    
+    .object_moon {
+        width: 100px;
+        top: 12%;
+        left: 25%;
+    }
+    
+    .construction-title {
+        font-size: 2.5em;
+    }
+    
+    .box_worker img {
+        width: 150px;
+    }
+    
+    .space-station img {
+        width: 500px;
+    }
+}
+
+
+
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+    /* Hide complex elements */
+    .space-crane,
+    .satellite-parts,
+    .blueprint-tablet {
+        display: none;
+    }
+    
+    /* Adjust sizes */
+    .object_earth {
+        width: 90px;
+        top: 20%;
+        left: 10%;
+    }
+    
+    .object_moon {
+        width: 70px;
+        top: 10%;
+        left: 20%;
+    }
+    
+    .construction-title {
+        font-size: 2em;
+        letter-spacing: 3px;
+    }
+    
+    .construction-text {
+        font-size: 1.1em;
+    }
+    
+    .box_astronaut {
+        top: 65%;
+        right: 15%;
+    }
+    
+    .box_worker {
+        top: 10%;
+        left: 5%;
+    }
+    
+    .box_worker img {
+        width: 120px;
+    }
+    
+    .space-station img {
+        width: 350px;
+    }
+    
+    .construction-sign img {
+        width: 300px;
+    }
+    
+    .construction-barrier {
+        width: 180px;
+        height: 28px;
+    }
+}
+/* ============================================
+   SMALL SCREENS (Tablets Portrait / Large Phones)
+   481px - 767px
+   ============================================ */
+
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+    /* Hide navigation */
+    .navbar-links {
+        display: none;
+    }
+    
+    .brand-logo {
+        margin: 0 auto;
+        text-align: center;
+        float: none;
+    }
+    
+    .brand-logo img {
+        width: 100px;
+    }
+    
+    /* Hide complex elements */
+    .space-crane,
+    .space-station,
+    .floating-wrench,
+    .floating-drill,
+    .floating-welding,
+    .floating-toolbox,
+    .floating-helmet {
+        display: none;
+    }
+    
+    /* Adjust main content */
+    .central-body {
+        padding-top: 20%;
+    }
+    
+    .image-404 {
+        width: 220px !important;
+    }
+    
+    .construction-title {
+        font-size: 1.8em;
+        letter-spacing: 2px;
+    }
+    
+    .construction-text {
+        font-size: 1em;
+        padding: 0 10px;
+    }
+    
+    /* Earth & Moon */
+    .object_earth {
+        width: 70px;
+        top: 10%;
+        left: 5%;
+    }
+    
+    .object_moon {
+        width: 50px;
+        top: 6%;
+        left: 15%;
+    }
+    
+    /* Astronaut */
+    .box_astronaut {
+        top: 70%;
+        right: 10%;
+    }
+    
+    .object_astronaut {
+        width: 100px !important;
+    }
+    
+    /* Worker */
+    .box_worker {
+        top: 40%;
+        left: 10%;
+    }
+    
+    .box_worker img {
+        width: 100px;
+    }
+    
+    /* Construction elements */
+    .construction-sign img {
+        width: 200px;
+    }
+    
+    .construction-barrier {
+        width: 140px;
+        height: 22px;
+    }
+    
+    .barrier-1::before,
+    .barrier-2::before {
+        font-size: 7px;
+    }
+    
+    .traffic-cone {
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-bottom: 45px solid #FF6B35;
+    }
+    
+    /* Button */
+    .btn-go-home {
+        width: 160px;
+        padding: 12px 18px;
+        font-size: 11px;
+    }
+}
+
+/* ============================================
+   EXTRA SMALL SCREENS (Phones)
+   320px - 480px
+   ============================================ */
+
+@media only screen and (max-width: 480px) {
+    /* Hide navigation */
+    .navbar-links {
+        display: none;
+    }
+    
+    .brand-logo {
+        margin: 0 auto;
+        text-align: center;
+        float: none;
+    }
+    
+    .brand-logo img {
+        width: 80px;
+    }
+    
+    /* Hide most decorative elements */
+    .space-crane,
+    .space-station,
+    .construction-sign,
+    .floating-wrench,
+    .floating-drill,
+    .floating-welding,
+    .floating-toolbox,
+    .floating-helmet,
+    .satellite-parts,
+    .blueprint-tablet,
+    .box_astronaut {
+        display: none;
+    }
+    
+}
+
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+    .stars,
+    .objects,
+    .glowing_stars,
+    .custom-navbar {
+        display: none;
+    }
+    
+    .central-body {
+        padding-top: 20%;
+    }
+    
+    body {
+        background: white;
+    }
+    
+    .construction-title,
+    .construction-text {
+        color: black;
+    }
+}
+
+
+/* ============================================
+   ADDITIONAL FIXES - ADD THESE AT THE END
+   ============================================ */
+
+/* Prevent layout shift on resize */
+.objects img,
+.objects div {
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* Smooth transitions only for interactions */
+.interactive-object,
+.interactive-barrier {
+    transition: filter 0.3s ease;
+}
+
+.interactive-object.avoid,
+.interactive-barrier.avoid {
+    transition: none;
+}
+
+/* Reduce motion styles */
+.reduce-motion * {
+    animation-duration: 0.5s !important;
+    transition-duration: 0.3s !important;
+}
+
+/* Hide resource-heavy elements on mobile */
+@media only screen and (max-width: 768px) {
+    .floating-debris,
+    .sparks-container {
+        display: none;
+    }
+    
+    .glowing_stars .star {
+        display: none;
+    }
+    
+    .objects img,
+    .objects div {
+        animation-duration: 20s !important;
+    }
+}
+
+/* Prevent scrolling issues */
+html {
+    overflow: hidden;
+    height: 100%;
+}
+
+body {
+    overflow: hidden;
+    height: 100%;
+    position: fixed;
+    width: 100%;
+}
+
+/* Touch optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .btn-go-home {
+        padding: 15px 25px;
+        min-width: 160px;
+        min-height: 44px;
+    }
+}
+
+/* Prevent rubber band scrolling on iOS */
+body {
+    overscroll-behavior: none;
+}
+
+.stars {
+    touch-action: none;
+}
+
+/* GPU acceleration */
+.object_rocket,
+.object_earth,
+.object_moon,
+.object_astronaut,
+.worker-astronaut,
+.station-construct,
+.crane-svg {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+
+/* Safe area for iPhone notches */
+@supports (padding: max(0px)) {
+    .custom-navbar {
+        padding-left: max(25px, env(safe-area-inset-left));
+        padding-right: max(15px, env(safe-area-inset-right));
+        padding-top: max(15px, env(safe-area-inset-top));
+    }
+}
+
+

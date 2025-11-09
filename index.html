@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MRPFTLM5BM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MRPFTLM5BM');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spaceprobe Pvt. Ltd.</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css"> <!-- For Navbar & Footer -->
+    <link rel="stylesheet" href="cards.css">
+    <link rel="stylesheet" href="css/img_gallary.css">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- Chart.js & Dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment"></script>
+    
+    <!-- JavaScript Files -->
+    <script src="js/navbar.js" defer></script>
+    <script src="js/modal.js" defer></script>
+    <script src="dropdown.js" defer></script>
+    <script src="js/carousel.js" defer></script>
+
+
+
+    
+    <!-- Header & Footer Loader -->
+    <script src="js/common.js" defer></script>
+
+
+
+
+       <!-- JS Dependencies -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Galactic Trails CSS -->
+  <!-- <link rel="stylesheet" href="galactic-trails.css" />  -->
+</head>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const starButton = document.querySelector(".button");
+  const skyCards = document.querySelector(".sky-cards");
+  const servicesSection = document.querySelector(".services-section");
+  const introContainer = document.querySelector(".intro-container");
+  const closeX = document.querySelector(".x-mark");
+
+  // When user clicks the "Stars" button
+  starButton.addEventListener("click", () => {
+    // Hide intro text
+    introContainer.style.opacity = "0";
+    introContainer.style.pointerEvents = "none";
+
+    // Reveal the cards and services layer (fade-in on top of the 3D background)
+    setTimeout(() => {
+      servicesSection.classList.add("visible");
+      skyCards.classList.add("visible");
+      closeX.style.opacity = "1";
+    }, 600);
+  });
+
+  // Close button (X) — brings back the intro and hides cards
+  closeX.addEventListener("click", () => {
+    servicesSection.classList.remove("visible");
+    skyCards.classList.remove("visible");
+    closeX.style.opacity = "0";
+
+    setTimeout(() => {
+      introContainer.style.opacity = "1";
+      introContainer.style.pointerEvents = "auto";
+    }, 700);
+  });
+});
+</script>
+
+
+
+<body>
+
+
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
+
+  <!-- Background Canvas -->
+  <canvas id="galactic-canvas"></canvas>
+
+
+
+  <section class="hero-section">
+    <div class="hero-content slide-in">
+      <div class="hero-top">
+        <!-- <p class="hero-welcome">We are!</p> -->
+        <div class="hero-logo">
+          <img src="logo/logo.png" alt="SPACEPROBE Logo">
+        </div>
+      </div>
+  
+      <!-- Button -->
+      <!-- <button id="open-modal" class="hero-btn">Know More</button> -->
+    </div>
+  </section>
+
+
+
+<section class="services-section">
+  
+  <!-- Dropdown Section -->
+<div class="dropdown-section">
+  <button class="dropdown-toggle">Know More ▼</button>
+
+  <div class="dropdown-card">
+    <!-- Twinkling stars -->
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+
+    <!-- Description -->
+    <p class = "par">
+              SpaceProbe Pvt Ltd is a pioneering company founded with the mission to bridge the gap between cutting-edge 
+              research and real-world applications. We are dedicated to developing innovative tools and services that empower 
+              communities, industries, and institutions.
+                </p>
+                <p class = "par">
+              Our expertise spans space weather alerts and forecasting, geospatial intelligence through GIS and remote sensing, 
+              and advanced technological solutions, all designed to promote sustainable growth and informed decision-making.
+            </p>
+            <p class = "par">
+              Beyond technology, we are equally committed to nurturing a scientific temperament in society. Through science outreach, 
+              exhibitions, corporate events, workshops, training schools, and citizen science programs, we strive to make science more 
+              accessible and engaging for all.
+                </p>
+              <p class = "par">  
+              By uniting scientific expertise with technological innovation, SpaceProbe seeks to build a strong ecosystem where 
+              knowledge, exploration, and application move together, helping communities not just understand space but truly benefit 
+              from it.
+            </p>
+  </div>
+</div>
+
+  
+  
+
+
+
+  <h2 class="section-title">Services</h2>
+  <div class="centered">
+
+    <!-- Mission Card -->
+<a href="https://example.com/mission" style="text-decoration: none; color: inherit;">
+  <div class="card border-right-behind border-bottom-behind">
+    <div class="shadow" style="--url: url('img/classroom.jpg')"></div>
+    <div class="image background class" style="--url: url('img/classroom.jpg')"></div>
+    <div class="image cutout outreach">
+      <img src="/img/AR_Outreach.png" alt="Mission">
+    </div>
+    <div class="content top">
+      <h2>Education and Outreach</h2>
+      <p>Empowering communities through hands-on learning, immersive experiences, and interactive programs that make space science accessible to all.</p>
+    </div>
+  </div>
+</a>
+
+<!-- Base Card 1 -->
+<a href="html/vr.html" style="text-decoration: none; color: inherit;">
+  <div class="card border-left-behind">
+    <div class="shadow" style="--url: url('/img/cosmos.jpg')"></div>
+    <div class="image background" style="--url: url('/img/cosmos.jpg')"></div>
+    <div class="image cutout vr">
+      <img src="/img/vr-man.png" alt="Base">
+    </div>
+    <div class="content top">
+      <h2>Virtual Universe</h2>
+      <p>Experience the cosmos in virtual reality — explore galaxies, nebulae, and stellar phenomena through immersive, educational simulations.</p>
+    </div>
+  </div>
+</a>
+
+<!-- Base Card 2 -->
+<a href="html/Geospatial.html" style="text-decoration: none; color: inherit;">
+  <div class="card border-left-behind">
+    <div class="shadow" style="--url: url('img/Earth.jpg')"></div>
+    <div class="image background" style="--url: url('img/Earth.jpg')"></div>
+    <div class="image cutout">
+      <img src="img/geo.png" alt="Base 2">
+    </div>
+    <div class="content top">
+      <h2>Geospatial Analytics</h2>
+      <p>Harness satellite imagery and spatial data to map, monitor, and analyze Earth's changing environments and planetary surfaces.</p>
+    </div>
+  </div>
+</a>
+
+<!-- Space Weather / Analysis Card -->
+<a href="html/spaceweather.html" style="text-decoration: none; color: inherit;">
+  <div class="card border-left-behind">
+    <div class="shadow" style="--url: url('/img/space_weather.jpg')"></div>
+    <div class="image background" style="--url: url('/img/space_weather.jpg')"></div>
+    <div class="image cutout">
+      <img src="/img/analysis.png" alt="Analysis">
+    </div>
+    <div class="content top">
+      <h2>Space Weather Alerts</h2>
+      <p>Monitor real-time solar activity, geomagnetic storms, and interplanetary events that influence satellite operations and communication systems.</p>
+    </div>
+  </div>
+</a>
+
+<!-- Rover Card -->
+<a href="https://example.com/rover" style="text-decoration: none; color: inherit;">
+  <div class="card border-left-behind">
+    <div class="shadow" style="--url: url('/img/rover.png')"></div>
+    <div class="image background" style="--url: url('/img/backround.jpg')"></div>
+    <div class="image cutout">
+      <img src="/img/rover.png" alt="Rover">
+    </div>
+    <div class="content top">
+      <h2>Space Science Tech</h2>
+      <p>Developing cutting-edge instruments and autonomous systems that advance planetary exploration and space research missions.</p>
+    </div>
+  </div>
+</a>
+
+
+  </div>
+</section>
+
+
+
+<section class="interactive-gallery-section">
+  <h2 class="section-title">Gallery</h2>
+  <div class="carousel-container">
+    <button class="carousel-btn left">&#10094;</button>
+    <div class="carousel-wrapper">
+      <div class="carousel" id="carousel"></div>
+    </div>
+    <button class="carousel-btn right">&#10095;</button>
+  </div>
+</section>
+
+<script src="js/carousel.js" defer></script>
+
+
+
+
+
+
+  
+
+  <!-- Footer -->
+<div id="footer-container"></div>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const slideInElements = document.querySelectorAll(".slide-in");
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target); // One-time animation
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        slideInElements.forEach(el => observer.observe(el));
+    });
+</script>
+
+</body>
+
+
+  <!-- Galactic Trails JS -->
+  <script src="js/galactic-trails.js"></script>
+  <script src="cards.js"></script>
+
+
+
+</html>

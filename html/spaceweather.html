@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MRPFTLM5BM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MRPFTLM5BM');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Space Weather Live</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/common.css" />       <!-- Navbar & Footer -->
+  <link rel="stylesheet" href="../css/spaceweather.css" /> <!-- Spaceweather sections -->
+  <link rel="stylesheet" href="../cards.css" />            <!-- Cards styling -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+  <!-- Chart.js & Dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/moment"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment"></script>
+
+  <!-- JS Files -->
+  <script src="../js/navbar.js" defer></script>
+  <script src="../js/modal.js" defer></script>
+  <script src="../js/sw.js" defer></script>
+  <script src="../js/proton_flux.js" defer></script>
+  <script src="../js/xray_flux.js" defer></script>
+  <script src="../js/kindex.js" defer></script>
+  <script src="../js/common.js" defer></script>
+
+  <!-- Galactic Trails Dependencies -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="../js/galactic-trails.js" defer></script>
+
+  <script src="../cards.js" defer></script>
+</head>
+
+<body>
+  <!-- Galactic Trails Background -->
+  <canvas id="galactic-canvas"></canvas>
+
+  <!-- Main Page Wrapper: now flex-managed -->
+  <main class="page-wrapper">
+    <div id="navbar-container"></div>
+
+    <section class="main-content">
+      <section class="realtime-charts-container">
+        
+        <!-- === Solar Wind === -->
+        <section class="solar-wind-container">
+          <p class="sw-text">This is live interplanetary magnetic field data of solar wind, updated every minute.</p>
+          <div class="solar-wind-section">
+            <h2>Real-Time Solar Wind</h2>
+
+            <div class="time-range-buttons">
+              <button id="btn-1day">1 Day</button>
+              <button id="btn-12hr">12 Hours</button>
+              <button id="btn-6hr">6 Hours</button>
+            </div>
+
+            <div id="legend-container">
+              <div class="legend-item">
+                <div class="legend-line bz-line"></div>
+                <span id="bz-value">Bz GSM: -- nT</span>
+              </div>
+              <div class="legend-item">
+                <div class="legend-line bt-line"></div>
+                <span id="bt-value">Bt: -- nT</span>
+              </div>
+            </div>
+
+            <canvas id="solarWindChart"></canvas>
+
+            <p class="data-source">
+              &copy; <a href="https://www.swpc.noaa.gov/" target="_blank">NOAA SWPC</a>
+            </p>
+          </div>
+        </section>
+
+        <!-- === Proton Flux === -->
+        <section class="proton-flux-container">
+          <p class="pf-text">This is live proton flux data, updated every minute.</p>
+          <div class="proton-flux-section">
+            <h2>Real-Time Proton Flux</h2>
+
+            <div class="energy-range-buttons">
+              <button id="btn-1MeV" class="active-button">≥1 MeV</button>
+              <button id="btn-10MeV" class="active-button">≥10 MeV</button>
+              <button id="btn-100MeV" class="active-button">≥100 MeV</button>
+              <button id="btn-500MeV" class="active-button">≥500 MeV</button>
+            </div>
+
+            <canvas id="protonFluxChart"></canvas>
+
+            <p class="data-source">
+              &copy; <a href="https://www.swpc.noaa.gov/" target="_blank">NOAA SWPC</a>
+            </p>
+          </div>
+        </section>
+
+        <!-- === Planetary K-Index === -->
+        <section class="k-index-container">
+          <p class="k-index-text">This is live planetary K-index data, updated every minute.</p>
+          <div class="k-index-section">
+            <h2>Real-Time Planetary K-Index</h2>
+            <canvas id="kIndexChart"></canvas>
+            <p class="k-index-data-source">
+              &copy; <a href="https://www.swpc.noaa.gov/" target="_blank">NOAA SWPC</a>
+            </p>
+          </div>
+        </section>
+
+      </section>
+    </main>
+
+    <!-- === Footer === -->
+    <footer id="footer-container" class="footer"></footer>
+
+  </div> <!-- End of page-wrapper -->
+
+  <!-- === Slide-in Animations === -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const slideInElements = document.querySelectorAll(".slide-in");
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      slideInElements.forEach(el => observer.observe(el));
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MRPFTLM5BM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MRPFTLM5BM');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why Support SpaceProbe | SpaceProbe Pvt Ltd</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/common.css" />
+  <link rel="stylesheet" href="../css/support.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+  <style>
+    body {
+      background: radial-gradient(circle at top, #00111A, #000510 70%);
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+    }
+    .content-section {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    h1, h2, h3 {
+      color: #FFD369;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: 2.8rem;
+      text-align: center;
+      margin-bottom: 40px;
+      color: #00C9A7;
+    }
+    p {
+      line-height: 1.8;
+      text-align: justify;
+      margin-bottom: 20px;
+      color: #ccc;
+      font-size: 1.1rem;
+    }
+    .section-divider {
+      border-top: 2px solid #00C9A7;
+      margin: 50px 0;
+    }
+    .point-icon {
+      font-size: 2rem;
+      color: #00C9A7;
+      margin-right: 15px;
+      flex: 0 0 50px;
+    }
+    .point {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 30px;
+    }
+
+    /* ===== Tabs ===== */
+    .tabs {
+      margin-top: 20px;
+    }
+    .tab-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .tab-btn {
+      background: #00111A;
+      color: #FFD369;
+      border: 2px solid #00C9A7;
+      border-radius: 8px;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .tab-btn.active, .tab-btn:hover {
+      background: #00C9A7;
+      color: #00111A;
+      border-color: #FFD369;
+    }
+    .tab-contents {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #00111A;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 0 15px rgba(0,201,167,0.3);
+    }
+    .tab-content {
+      display: none;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #ccc;
+    }
+    .tab-content.active {
+      display: block;
+    }
+
+    /* ===== Support Form ===== */
+    .future {
+      max-width: 700px;
+      margin: 50px auto;
+      padding: 25px;
+      background: #00111A;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,201,167,0.3);
+    }
+    .contribution-form .form-group {
+      margin-bottom: 15px;
+    }
+    .contribution-form input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #00C9A7;
+      background: #000510;
+      color: #fff;
+      font-size: 1rem;
+    }
+    .btn-primary {
+      background: #FFD369;
+      color: #000;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn-primary:hover {
+      background: #FFC300;
+    }
+
+    /* ===== Acknowledgment ===== */
+    .acknowledgment-section {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 25px;
+      background: #00111A;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 211, 105, 0.2);
+    }
+    .acknowledgment-section h2 {
+      text-align: center;
+      color: #00C9A7;
+      margin-bottom: 25px;
+    }
+
+    /* ===== Payment Modal ===== */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: #00111A;
+      margin: 50px auto;
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 450px;
+      color: #fff;
+      text-align: center;
+      position: relative;
+    }
+    .modal .close {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #FFD369;
+    }
+    .qr-container {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      margin: 20px 0;
+      align-items: center;
+    }
+    .payment-option img.qr {
+      max-width: 200px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 211, 105, 0.3);
+    }
+    .payment-option p, #neftDetails {
+      color: #FFD369;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+    .neft-option button.copy-btn {
+      margin-top: 10px;
+      background: #FFD369;
+      border: none;
+      color: #000;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .neft-option button.copy-btn:hover {
+      background: #FFC300;
+    }
+    #paidBtn {
+      margin-top: 20px;
+      padding: 12px 25px;
+      border-radius: 8px;
+      border: none;
+      background: #FFD369;
+      color: #000;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    #paidBtn:hover { background: #FFC300; }
+    .modal-note {
+      margin-top: 15px;
+      color: #00C9A7;
+      font-weight: 600;
+    }
+
+    /* ===== Donate Button ===== */
+    .contribute-btn {
+      position: fixed;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      background: #FFD369;
+      color: #000;
+      padding: 14px 22px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(255, 211, 105, 0.3);
+      transition: 0.3s;
+      z-index: 1000;
+    }
+    .contribute-btn:hover { background: #FFC300; box-shadow: 0 0 25px rgba(255, 211, 105, 0.5); }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div id="navbar-container"></div>
+  </header>
+
+  <main>
+    <section class="content-section">
+      <h1>Why Support SpaceProbe</h1>
+      <p>
+        Supporting SpaceProbe Pvt. Ltd. means investing in the future of India’s space science and technology ecosystem.
+        It is a commitment to empower young minds, strengthen indigenous research, and bridge the gap between academic excellence and real-world innovation.
+      </p>
+
+      <!-- Points Section -->
+      <div class="point">
+        <i class="fa-solid fa-user-graduate point-icon"></i>
+        <div>
+          <h2>1. Nurturing the Next Generation of Scientists and Innovators</h2>
+          <p>SpaceProbe was founded within a university environment where curiosity, learning, and research go hand in hand. Our team consists of dedicated students, research scholars, and mentors exploring space weather, solar–terrestrial interactions, and geospatial science applications in India.</p>
+          <p>Many talented students continue to work without financial support, driven purely by passion. Your contribution enables fellowships, training resources, and research tools, ensuring that financial limitations never hinder their scientific potential.</p>
+        </div>
+      </div>
+
+      <div class="point">
+        <i class="fa-solid fa-rocket point-icon"></i>
+        <div>
+          <h2>2. Building India’s Self-Reliance in Space Science Research</h2>
+          <p>SpaceProbe develops indigenous scientific tools, computational models, and instruments serving both national space missions and academic research. Funding allows us to expand laboratory capabilities, enhance data-analysis systems, and design small-scale instruments that strengthen India’s scientific independence.</p>
+        </div>
+      </div>
+
+      <div class="point">
+        <i class="fa-solid fa-globe point-icon"></i>
+        <div>
+          <h2>3. From Academic Roots to National Impact</h2>
+          <p>Established by a university research group recognized by ISRO and SCOSTEP, SpaceProbe transforms student-led research into technologies that improve satellite safety, communication reliability, and disaster preparedness while advancing space science innovation in India.</p>
+        </div>
+      </div>
+
+      <div class="point">
+        <i class="fa-solid fa-laptop-code point-icon"></i>
+        <div>
+          <h2>4. Creating Infrastructure for Innovation</h2>
+          <p>External support allows SpaceProbe to establish a dedicated Space Weather and Geospatial Innovation Lab with advanced software, sensors, and computing systems. This infrastructure accelerates research projects and opens collaboration opportunities with academic institutions, industries, and government agencies, fostering India’s space research ecosystem.</p>
+        </div>
+      </div>
+
+      <div class="point">
+        <i class="fa-solid fa-hand-holding-heart point-icon"></i>
+        <div>
+          <h2>5. A Platform that Gives Back to Society</h2>
+          <p>Every contribution has a multiplier effect, building a knowledge-driven ecosystem that empowers students, generates employment, supports national missions, and delivers real-world solutions for environmental monitoring, sustainable development, and STEM education outreach in India.</p>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <!-- ===== How You Can Help Tabs ===== -->
+      <div class="tabs">
+        <h2 style="text-align:center;">How You Can Help</h2>
+        <div class="tab-buttons">
+          <button class="tab-btn active" data-tab="financial">Financial Contributions</button>
+          <button class="tab-btn" data-tab="equipment">Equipment Donations</button>
+          <button class="tab-btn" data-tab="partnerships">Collaborative Partnerships</button>
+        </div>
+        <div class="tab-contents">
+          <div class="tab-content active" id="financial">
+            <p>Support research projects, student fellowships, and laboratory infrastructure for space science research in India.</p>
+          </div>
+          <div class="tab-content" id="equipment">
+            <p>Provide computing systems, servers, sensors, or analytical instruments for scientific research use.</p>
+          </div>
+          <div class="tab-content" id="partnerships">
+            <p>Partner with SpaceProbe in research, data analysis, or joint innovation programs in the field of space science.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <!-- ===== Support Form ===== -->
+      <section class="future">
+        <h2>Support Us</h2>
+        <p>Every contribution fuels discovery, empowers young scientists, and strengthens India’s space research ecosystem. By supporting SpaceProbe, you help provide student fellowships, research tools, and lab resources to turn ideas into real-world innovations. Major supporters contributing ₹1,00,000 or more will be acknowledged in SpaceProbe publications for one year.</p>
+        <form class="contribution-form">
+          <div class="form-group"><label for="name">Full Name (optional)</label><input type="text" id="name" name="name" placeholder="Enter your full name"></div>
+          <div class="form-group"><label for="email">Email Address (optional)</label><input type="email" id="email" name="email" placeholder="Enter your email"></div>
+          <div class="form-group"><label for="mobile">Mobile Number (optional)</label><input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number"></div>
+          <button type="button" class="btn-primary pay-btn"><i class="fa-solid fa-money-bill-wave"></i> Proceed to Contribute</button>
+        </form>
+        <p class="form-note">You can choose to share your details or be a anonymous doner — every bit of support helps our mission grow.</p>
+      </section>
+
+      <!-- ===== Acknowledgment Policy ===== -->
+      <section class="acknowledgment-section">
+        <h2>Acknowledgment Policy for Major Supporters</h2>
+        <p>We deeply appreciate the contributions made by individuals and organizations toward advancing SpaceProbe’s research and student development initiatives.</p>
+        <h3>Acknowledgment Criteria:</h3>
+        <p>Any supporter contributing ₹1,00,000 (One Lakh Rupees) or more, either through a student fellowship or equipment support, will be acknowledged in all SpaceProbe research publications arising during the one-year period following the date of donation.</p>
+        <h3>Acknowledgment Format:</h3>
+        <p>“We acknowledge the support from [Name of Donor/Organization] for this research study through student fellowship/equipment support.”</p>
+        <h3>Duration:</h3>
+        <p>Acknowledgments will appear in relevant publications, reports, and presentations for one year from the date of donation.</p>
+      </section>
+    </section>
+  </main>
+
+  <!-- Sticky Contribute Button -->
+  <a href="#" class="contribute-btn">Donate</a>
+
+  <!-- Payment Modal -->
+  <div id="paymentModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Contribute to SpaceProbe</h2>
+      <h3 style="color:#FFD369; margin-top:10px;">How You Can Pay</h3>
+      <p style="color:#ccc;">You can support us using UPI, Google Pay, PhonePe, or NEFT transfer. Scan the QR code or use the NEFT details below.</p>
+      
+      <div class="qr-container">
+        <div class="payment-option">
+          <img class="qr" src="../img/upi.jpeg" alt="UPI QR Code">
+          <p>Scan with UPI / Google Pay / PhonePe</p>
+        </div>              
+        <div class="payment-option neft-option">
+          <p id="neftDetails">Account: SpaceProbe Pvt Ltd, A/C No: 50200112838950, IFSC: HDFC0001573</p>
+          <button class="copy-btn">Copy Details</button>
+        </div>
+      </div>
+      <button id="paidBtn">I Paid</button>
+      <p id="paidMsg" class="modal-note" style="display:none;">Thank you! Your contribution will be acknowledged.</p>
+    </div>
+  </div>
+
+<!-- Floating Back Button -->
+<a href="../html/support.html" title="Back to Support Page" 
+   style="
+     position: fixed;
+     bottom: 25px;
+     left: 25px;
+     width: 50px;
+     height: 50px;
+     border-radius: 50%;
+     background: linear-gradient(135deg, #FFD369, #FF8C00);
+     color: #111;
+     font-size: 20px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+     cursor: pointer;
+     text-decoration: none;
+     transition: all 0.3s ease;
+     z-index: 9999;
+   "
+   onmouseover="this.style.transform='scale(1.1) rotate(-10deg)'; this.style.background='linear-gradient(135deg, #FF8C00, #FFD369)'"
+   onmouseout="this.style.transform='scale(1) rotate(0deg)'; this.style.background='linear-gradient(135deg, #FFD369, #FF8C00)'">
+  <i class="fa-solid fa-arrow-left"></i>
+</a>
+
+
+
+  <!-- Footer -->
+  <footer>
+    <div id="footer-container"></div>
+  </footer>
+
+  <script src="../js/common.js" defer></script>
+  <script src="../js/navbar.js" defer></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Tabs
+      const tabButtons = document.querySelectorAll(".tab-btn");
+      const tabContents = document.querySelectorAll(".tab-content");
+      tabButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+          const tab = btn.dataset.tab;
+          tabButtons.forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          tabContents.forEach(content => {
+            content.id === tab ? content.classList.add("active") : content.classList.remove("active");
+          });
+        });
+      });
+
+      // Payment Modal
+      const contributeBtn = document.querySelector(".contribute-btn");
+      const paymentModal = document.getElementById("paymentModal");
+      const closeBtn = paymentModal.querySelector(".close");
+      const copyBtn = paymentModal.querySelector(".copy-btn");
+      const neftDetails = paymentModal.querySelector("#neftDetails");
+      const paidBtn = paymentModal.querySelector("#paidBtn");
+      const paidMsg = paymentModal.querySelector("#paidMsg");
+
+      contributeBtn.addEventListener("click", e => {
+        e.preventDefault();
+        paidMsg.style.display = "none";
+        paidBtn.disabled = false;
+        paidBtn.innerText = "I Paid";
+        copyBtn.innerText = "Copy Details";
+        paymentModal.style.display = "flex";
+      });
+
+      closeBtn.addEventListener("click", () => paymentModal.style.display = "none");
+      window.addEventListener("click", e => { if(e.target === paymentModal) paymentModal.style.display = "none"; });
+
+      copyBtn.addEventListener("click", () => {
+        navigator.clipboard.writeText(neftDetails.innerText.replace(/\n/g," ")).then(() => {
+          copyBtn.innerText = "Copied!";
+          setTimeout(()=> copyBtn.innerText="Copy Details",2000);
+        });
+      });
+
+      paidBtn.addEventListener("click", () => {
+        paidMsg.style.display = "block";
+        paidBtn.disabled = true;
+        paidBtn.innerText = "Acknowledged";
+      });
+
+      document.querySelector(".pay-btn").addEventListener("click", () => {
+        paymentModal.style.display = "flex";
+      });
+    });
+  </script>
+</body>
+</html>

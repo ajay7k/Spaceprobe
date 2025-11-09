@@ -1,0 +1,13 @@
+# Enable mod_rewrite
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Allow all access to this directory
+    Require all granted
+    
+    # Internally rewrite requests to add the .php extension
+    # This allows you to call /api/auth instead of /api/auth.php
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}\.php -f
+    RewriteRule ^(.*)$ $1.php [L]
+</IfModule>

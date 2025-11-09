@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MRPFTLM5BM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MRPFTLM5BM');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upcoming Events</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/Events.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <!-- FullCalendar CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet" />
+
+  <!-- Scripts -->
+  <script src="../js/navbar.js" defer></script>
+  <script src="../js/common.js" defer></script>
+  <script src="../js/modal.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js" defer></script>
+  <script src="../js/Events.js" defer></script> <!-- 👈 External event logic -->
+
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div id="navbar-container"></div>
+
+  <!-- Star Trails Background -->
+  <div class="startrails-section">
+    <div class="trail-overlay">
+      <h1 class="trail-heading">Upcoming Events</h1>
+      <p class="trail-subtext">Explore our latest outreach and space weather activities</p>
+    </div>
+  </div>
+
+  <!-- Calendar Section -->
+  <section class="calendar-section" id="calendar-section">
+    <div id="calendar"></div>
+  </section>
+
+  <!-- Events Section -->
+  <section class="events-section">
+    <h2 class="events-heading"> Book Our Events</h2>
+    <div class="events-container">
+
+      <!-- Event Card 1 -->
+      <div class="event-card" data-date="2025-12-12">
+        <h2>Experience Virtual Tour</h2>
+        <p class="desc">
+          Book a virtual reality tour to explore the unknown worlds. First kind of experience where education meets virtual reality.
+        </p>
+        <p class="participants">
+          <strong>Min Participants:</strong> 5 &nbsp; | &nbsp; <strong>Max Participants:</strong> 20
+        </p>
+        <a href="javascript:void(0)" class="book-btn" onclick="openForm(this)">Book Now</a>
+      </div>
+
+      <!-- Event Card 2 -->
+      <div class="event-card" data-date="2025-11-05">
+        <h2>Night Sky Observation Drive</h2>
+        <p class="desc">
+          Explore the wonders of the night sky together with friends and family, enjoy telescope viewings, and learn about the stars and constellations.
+        </p>
+        <p class="participants">
+          <strong>Min Participants:</strong> 10 &nbsp; | &nbsp; <strong>Max Participants:</strong> 50
+        </p>
+        <a href="javascript:void(0)" class="book-btn" onclick="openForm(this)">Book Now</a>
+      </div>
+
+      <!-- Event Card 3 -->
+      <div class="event-card" data-date="2025-10-30">
+        <h2>Book your Science Outreach programme</h2>
+        <p class="desc">
+          An interactive session to understand the importance of space weather and its influence on technology and life on Earth.
+        </p>
+        <p class="participants">
+          <strong>Min Participants:</strong> 5 &nbsp; | &nbsp; <strong>Max Participants:</strong> 30
+        </p>
+        <a href="javascript:void(0)" class="book-btn" onclick="openForm(this)">Book Now</a>
+      </div>
+
+      <!-- Event Card 4 -->
+      <div class="event-card" data-date="2025-10-30">
+        <h2>Consult your Scientist</h2>
+        <p><i class="fa-solid fa-location-dot"></i> Venue to be decided</p>
+        <p class="desc">
+          An interactive session with an expert. Discussions include career guidance, science discussions, and talks.
+        </p>
+        <p class="participants">
+          <strong>Min Participants:</strong> 2 &nbsp; | &nbsp; <strong>Max Participants:</strong> 10
+        </p>
+        <a href="javascript:void(0)" class="book-btn" onclick="openForm(this)">Book Now</a>
+      </div>
+
+      <!-- Event Card 5 -->
+      <div class="event-card" data-date="2025-10-30">
+        <h2>Workshop / Hands-on-Training Session</h2>
+        <p><i class="fa-solid fa-location-dot"></i> Venue will be decided by participant preferences</p>
+        <p class="desc">
+          An interactive session with an expert. Discussions include career guidance, science discussions, and talks.
+        </p>
+        <p class="participants">
+          <strong>Min Participants:</strong> 2 &nbsp; | &nbsp; <strong>Max Participants:</strong> 10
+        </p>
+        <a href="javascript:void(0)" class="book-btn" onclick="openForm(this)">Book Now</a>
+      </div>
+
+      <!-- Event Card 6 -->
+      <div class="event-card" data-date="2025-10-30">
+        <h2>Events on Cruise</h2>
+        <p><i class="fa-solid fa-location-dot"></i> Venue will be decided by participant preferences</p>
+        <p class="desc">
+          An interactive session with an experts on cruise. Book events like Virtual tour, Night sky observations, Outreach program on a cruise ship.
+        </p>
+        <p class="participants">
+          <strong>Min Participants:</strong> 10 &nbsp; | &nbsp; <strong>Max Participants:</strong> 50
+        </p>
+        <a href="javascript:void(0)" class="book-btn" onclick="openForm(this)">Book Now</a>
+      </div>
+
+      <!-- Event Card 7 -->
+      <div class="event-card" data-date="2025-10-30">
+        <h2>Corporate Bookings</h2>
+        <p><i class="fa-solid fa-location-dot"></i> Venue will be decided by participant preferences</p>
+        <p class="desc">
+          Book the events for corporate / societys.
+        </p>
+        <p class="participants">
+          <strong>Min Participants:</strong> 10 &nbsp; | &nbsp; <strong>Max Participants:</strong> 50
+        </p>
+        <a href="javascript:void(0)" class="book-btn" onclick="openForm(this)">Book Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================== -->
+  <!-- START: Updated Registration Modal with Detailed Booking Form        -->
+  <!-- =================================================================== -->
+  <div id="registrationModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeForm()">&times;</span>
+      
+      <!-- Dynamic Event Title will be inserted here by JS -->
+      <h2 id="modalEventTitle">Event Registration</h2> 
+      
+      <form id="bookingForm">
+        <!-- Hidden field to store the event name for the backend -->
+        <input type="hidden" id="eventName" name="eventName">
+  
+        <div class="form-group">
+          <label for="name">Full Name:</label>
+          <input type="text" id="name" name="name" placeholder="e.g., Jane Doe" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email Address:</label>
+          <input type="email" id="email" name="email" placeholder="e.g., jane.doe@example.com" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="participants">Number of Participants:</label>
+          <input type="number" id="participants" name="participants" min="1" max="50" required>
+          <small id="participantLimits" class="participant-limits-text"></small>
+        </div>
+        
+        <div class="form-group">
+          <label for="bookingDate">Preferred Date:</label>
+          <input type="date" id="bookingDate" name="bookingDate" required>
+        </div>
+  
+        <div class="form-group">
+          <label>Payment Method:</label>
+          <div class="payment-options">
+              <label><input type="radio" name="paymentMethod" value="card" checked> Credit/Debit Card</label>
+              <!-- You can add more options like PayPal here later -->
+          </div>
+        </div>
+        
+        <!-- This button will now trigger JavaScript to send data to the backend -->
+        <button type="submit" class="book-btn">Proceed to Payment</button>
+        
+        <!-- This div will be used to show messages like "Success!" or "Error" -->
+        <div id="formMessage" class="form-message"></div>
+      </form>
+    </div>
+  </div>
+  <!-- =================================================================== -->
+  <!-- END: Updated Registration Modal                                     -->
+  <!-- =================================================================== -->
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+
+</body>
+</html>

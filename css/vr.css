@@ -1,0 +1,375 @@
+/* =======================================
+   BASE STYLES
+======================================= */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Orbitron', 'Roboto', sans-serif;
+  color: #fff;
+  background: #000;
+  overflow: hidden;
+  position: relative;
+}
+
+/* =======================================
+   INTRO SECTION
+======================================= */
+.intro-container {
+  position: absolute;
+  top: 54%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: justify;
+  z-index: 10;
+  max-width: 900px;
+  padding: 40px 20px;
+  transition: opacity 0.6s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.intro-container h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #00ffe5;
+  text-shadow: 0 0 10px #00ffe5;
+  text-align: center;
+  width: 100%;
+}
+
+@media screen and (min-width: 860px) {
+  .intro-container h1 {
+    font-size: 40px;
+    line-height: 52px;
+  }
+}
+
+
+.intro-container .fancy-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  color: #d0d0d0;
+}
+/* =======================================
+   FADE-IN ANIMATION
+======================================= */
+.intro-container h2 {
+  opacity: 0;
+  animation: fadeInIntro 1s forwards;
+}
+.intro-container h2:nth-child(2) { animation-delay: 0.3s; }
+.intro-container h2:nth-child(3) { animation-delay: 0.6s; }
+.intro-container h2:nth-child(4) { animation-delay: 0.9s; }
+.intro-container h2:nth-child(5) { animation-delay: 1.2s; }
+
+@keyframes fadeInIntro {
+  to { opacity: 1; }
+}
+
+/* =======================================
+   BUTTON
+======================================= */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 12px 40px;
+  border: 2px solid #00ffe5;
+  color: #00ffe5;
+  text-transform: uppercase;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  border-radius: 8px;
+  transition: 0.4s;
+  z-index: 6;
+}
+
+.button:hover {
+  background: #00ffe5;
+  color: #000;
+  box-shadow: 0 0 25px #00ffe5;
+}
+
+/* =======================================
+   X MARK
+======================================= */
+/* ---- X MARK ---- */
+.x-mark {
+  position: fixed;
+  top: 80px;
+  right: 40px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  z-index: 30;
+}
+
+.x-mark .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.x-mark .left,
+.x-mark .right {
+  position: absolute;
+  top: 18px;
+  width: 100%;
+  height: 4px;
+  background: #00ffe5;
+  border-radius: 2px;
+  transition: 0.4s;
+}
+
+.x-mark .left {
+  transform: rotate(45deg);
+}
+
+.x-mark .right {
+  transform: rotate(-45deg);
+}
+
+.x-mark:hover .left,
+.x-mark:hover .right {
+  background: #ff00aa;
+  box-shadow: 0 0 15px #ff00aa;
+}
+
+/* =======================================
+   SKY CONTAINER
+======================================= */
+.sky-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+  width: 100%;
+  padding-top: 50px;
+}
+
+@media screen and (min-width: 860px) {
+  .sky-container {
+    top: 18%;
+    right: 12%;
+  }
+}
+
+.sky-container__left,
+.sky-container__right {
+  display: inline-block;
+  vertical-align: top;
+  font-weight: bold;
+}
+.sky-container__left h2,
+.sky-container__right h2 {
+  font-family: 'brandon-grotesque', sans-serif;
+  margin: 0;
+  font-size: 26px;
+  line-height: 26px;
+}
+@media screen and (min-width: 860px) {
+  .sky-container__left h2,
+  .sky-container__right h2 {
+    font-size: 72px;
+    line-height: 68px;
+  }
+}
+.sky-container__left { margin-right: 5px; }
+.sky-container .thirty-one { letter-spacing: 4px; }
+
+/* =======================================
+   SKY CARDS
+======================================= */
+.sky-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  pointer-events: none; /* container itself doesn’t catch events */
+}
+
+/* ---- SKY CARDS ---- */
+.sky-cards {
+  display: flex;
+  gap: 40px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1.2s ease;
+  pointer-events: all; /* re-enable for children */
+}
+
+.sky-cards.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- EACH CARD ---- */
+.sky-card {
+  width: 400px;
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 18px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  z-index: 20;
+}
+
+.sky-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent);
+  transition: opacity 0.5s ease;
+}
+
+.sky-card h3,
+.sky-card p {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  color: #fff;
+  z-index: 2;
+}
+
+.sky-card h3 {
+  bottom: 80px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  color: #00ffe5;
+  text-shadow: 0 0 10px #00ffe5;
+}
+
+.sky-card p {
+  bottom: 30px;
+  font-size: 0.95rem;
+  color: #d0d0d0;
+  line-height: 1.4;
+}
+
+/* ---- HOVER EFFECT ---- */
+.sky-card:hover {
+  transform: translateY(-15px) scale(1.05);
+  box-shadow: 0 0 35px rgba(0, 255, 229, 0.45);
+}
+
+.sky-card h3 {
+  position: absolute;
+  bottom: 52px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+}
+
+.sky-card p {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.9rem;
+  color: #dfefff;
+  width: 85%;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+/* =======================================
+   FLOATING ANIMATION
+======================================= */
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* =======================================
+   TEXT HELPERS
+======================================= */
+.text-right { text-align: right; }
+.text-left { text-align: left; }
+
+/* =======================================
+   SOCIAL ICONS
+======================================= */
+.social-icon a {
+  position: absolute;
+  background: white;
+  box-shadow: -1px -1px 20px rgba(0, 0, 0, 0.3);
+  display: inline-block;
+  width: 150px;
+  height: 80px;
+  transform-origin: 50% 50%;
+  transition: 0.15s ease-out;
+  text-decoration: none;
+}
+.social-icon i {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1000;
+  transition: 0.15s ease-out;
+}
+.twitter:hover a { transform: rotate(-45deg) scale(1.05); }
+.twitter:hover i { color: #00aced; }
+.twitter a { bottom: -40px; right: -75px; transform: rotate(-45deg); }
+.twitter i { bottom: 7px; right: 7px; color: #00aced; }
+.youtube:hover a { transform: rotate(45deg) scale(1.05); }
+.youtube:hover i { color: #e62117; }
+.youtube a { bottom: -40px; left: -75px; transform: rotate(45deg); }
+.youtube i { bottom: 7px; left: 7px; color: #e62117; }
+
+/* =======================================
+   SERVICES SECTION / BACKGROUND LAYER
+======================================= */
+.services-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(60px);
+  pointer-events: none;
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.services-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* =======================================
+   CANVAS SAFETY (behind everything)
+======================================= */
+canvas {
+  pointer-events: none !important;
+}

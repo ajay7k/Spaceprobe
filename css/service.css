@@ -1,0 +1,298 @@
+/* === BREAKPOINT VARIABLES === */
+@media screen and (min-width: 860px) {
+    .intro-container h1 {
+        font-size: 40px;
+        line-height: 52px;
+    }
+
+    .sky-container__left h2,
+    .sky-container__right h2 {
+        font-size: 72px;
+        line-height: 68px;
+    }
+}
+
+/* Body */
+body {
+    position: relative;
+    margin: 0;
+    overflow-x: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0a0a0a; /* dark background to blend with canvas */
+    color: white;
+}
+
+canvas { display:block; }
+
+/* Intro container */
+.intro-container {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+    z-index: 5;
+}
+
+/* Headings */
+h1 {
+    font-family: 'brandon-grotesque', sans-serif;
+    font-weight: bold;
+    margin: 0;
+    font-size: 20px;
+}
+
+.fancy-text {
+    font-family: 'adobe-garamond-pro', sans-serif;
+    font-style: italic;
+    letter-spacing: 1px;
+    margin-bottom: 17px;
+}
+
+/* Button */
+.button {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'brandon-grotesque', sans-serif;
+    text-transform: uppercase;
+    min-width: 200px;
+    margin-top: 30px;
+}
+
+.button .border {
+    border: 1px solid white;
+    transform: skewX(-20deg);
+    height: 32px;
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+    transition: 0.1s ease-out;
+}
+
+.button .border .left-plane,
+.button .border .right-plane {
+    position: absolute;
+    background: white;
+    height: 32px;
+    width: 100px;
+    transition: 0.15s ease-out;
+}
+
+.button .border .left-plane { left: 0; transform: translateX(-100%); }
+.button .border .right-plane { right: 0; transform: translateX(100%); }
+
+.button .text {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.15s ease-out;
+    color: white;
+    text-decoration: none;
+}
+
+.button:hover .border {
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
+}
+
+.button:hover .border .left-plane,
+.button:hover .border .right-plane {
+    transform: translateX(0%);
+}
+
+.button:hover .text {
+    color: #121212;
+}
+
+/* X-mark */
+.x-mark {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 10;
+}
+
+.x-mark .container {
+    position: relative;
+    width: 20px;
+    height: 20px;
+}
+
+.x-mark .left,
+.x-mark .right {
+    width: 2px;
+    height: 20px;
+    background: white;
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    border-radius: 3px;
+    transition: 0.15s ease-out;
+}
+
+.x-mark .right { transform: rotate(-45deg); }
+.x-mark .left { transform: rotate(45deg); }
+
+.x-mark:hover .right { transform: rotate(-45deg) scaleY(1.2); }
+.x-mark:hover .left { transform: rotate(45deg) scaleY(1.2); }
+
+/* Sky container */
+.sky-container {
+    position: absolute;
+    top: 2%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    opacity: 0;
+    z-index: 5;
+}
+
+@media screen and (min-width: 860px) {
+    .sky-container {
+        top: 18%;
+        right: 12%;
+        left: auto;
+    }
+}
+
+.sky-container__left,
+.sky-container__right {
+    display: inline-block;
+    vertical-align: top;
+    font-weight: bold;
+}
+
+.sky-container__left { margin-right: 5px; }
+
+.sky-container__left h2,
+.sky-container__right h2 {
+    font-family: 'brandon-grotesque', sans-serif;
+    font-size: 26px;
+    line-height: 26px;
+    margin: 0;
+}
+
+.thirty-one { letter-spacing: 4px; }
+
+/* Text alignment helpers */
+.text-right { text-align: right; }
+.text-left { text-align: left; }
+
+/* Social icons */
+.social-icon a {
+    position: absolute;
+    display: inline-block;
+    width: 150px;
+    height: 80px;
+    background: white;
+    transform-origin: 50% 50%;
+    transition: 0.15s ease-out;
+    box-shadow: -1px -1px 20px rgba(0,0,0,0.3);
+}
+
+.social-icon i {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1000;
+    transition: 0.15s ease-out;
+}
+
+/* Twitter */
+.twitter a { bottom: -40px; right: -75px; transform: rotate(-45deg); }
+.twitter i { bottom: 7px; right: 7px; color: #00aced; }
+.twitter:hover a { transform: rotate(-45deg) scale(1.05); }
+.twitter:hover i { color: #33b0f0; }
+
+/* YouTube */
+.youtube a { bottom: -40px; left: -75px; transform: rotate(45deg); }
+.youtube i { bottom: 7px; left: 7px; color: #e62117; }
+.youtube:hover a { transform: rotate(45deg) scale(1.05); }
+.youtube:hover i { color: #ff3a2e; }
+
+/* ================= SERVICES SECTION ================= */
+.services-section {
+    position: absolute;      /* On top of canvas */
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 80px 20px;
+    text-align: center;
+    z-index: 8;
+    background: transparent;  /* Transparent for stars behind */
+    
+    /* Hidden initially */
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(60px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.services-section.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.services-section .section-title {
+    font-size: 36px;
+    margin-bottom: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+.page-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card {
+    background: linear-gradient(145deg, rgba(26,26,26,0.8), rgba(13,13,13,0.8)); /* semi-transparent */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(255,255,255,0.15);
+}
+
+.card .content {
+    text-align: left;
+}
+
+.card .title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #e0e0e0;
+}
+
+.card .copy {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #aaa;
+}

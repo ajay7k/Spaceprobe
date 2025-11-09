@@ -1,0 +1,366 @@
+/* ---------- GLOBAL STYLES ---------- */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #050010;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* ---------- STAR TRAILS TOP SECTION ---------- */
+.startrails-section {
+  position: relative;
+  height: 60vh;
+  background: radial-gradient(circle at center, #2b0047, #0a0015 80%);
+  background-image: url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1920&q=80");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: fadeIn 1.2s ease-in;
+}
+
+.startrails-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(10, 0, 30, 0.1), rgba(10, 0, 30, 1));
+}
+
+.trail-overlay {
+  position: absolute;
+  bottom: 20%;
+  width: 100%;
+  text-align: center;
+  z-index: 2;
+}
+
+.trail-heading {
+  font-size: 3rem;
+  color: #e0b3ff;
+  text-shadow: 0 0 25px #a04fff;
+  margin: 0;
+}
+
+.trail-subtext {
+  color: #d8c7ff;
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+/* ---------- CALENDAR SECTION ---------- */
+.calendar-section {
+  padding: 50px 10%;
+  background: #0a0015;
+  border-top: 1px solid rgba(180, 100, 255, 0.3);
+}
+
+#calendar {
+  max-width: 900px;
+  margin: 0 auto;
+  background: rgba(30, 0, 50, 0.85);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(180, 0, 255, 0.3);
+  color: #fff;
+}
+
+.fc .fc-toolbar-title {
+  color: #d6a8ff;
+  font-weight: 600;
+}
+
+.fc .fc-button {
+  background-color: #a64dff;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+}
+
+.fc .fc-button:hover {
+  background-color: #d292ff;
+  color: #000;
+}
+
+.fc .fc-daygrid-event {
+  background-color: #b06fff !important;
+  border: none;
+  color: #fff;
+  border-radius: 8px;
+  padding: 2px 4px;
+}
+
+/* ---------- EVENTS SECTION ---------- */
+.events-section {
+  background: #0a0015;
+  padding: 60px 10%;
+  text-align: center;
+}
+
+.events-heading {
+  text-align: center;
+  font-size: 2rem;
+  color: #d6a8ff;
+  margin-bottom: 30px;
+  text-shadow: 0 0 15px #a04fff;
+}
+
+.events-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.event-card {
+  background: rgba(40, 0, 70, 0.8);
+  border: 1px solid rgba(170, 100, 255, 0.3);
+  border-radius: 16px;
+  padding: 25px;
+  text-align: left;
+  box-shadow: 0 0 20px rgba(150, 0, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 30px rgba(190, 100, 255, 0.6);
+}
+
+.event-card h2 {
+  color: #d6a8ff;
+  margin-bottom: 10px;
+}
+
+.event-card p {
+  margin: 6px 0;
+  color: #e9ddff;
+}
+
+.event-card .desc {
+  font-size: 0.95rem;
+  margin-top: 10px;
+  color: #f0e0ff;
+}
+
+.event-card .participants {
+  font-size: 0.9rem;
+  margin-top: 10px;
+  color: #d6a8ff;
+}
+
+/* --- MODIFIED --- Universal Book Button Style for Cards and Forms */
+.book-btn {
+  display: inline-block;
+  width: auto;
+  border: none; /* Add for <button> element consistency */
+  margin: 20px 0 0 0;
+  padding: 12px 35px;
+  text-decoration: none;
+  text-align: center;
+  background: linear-gradient(135deg, #8f3fff, #c080ff);
+  border-radius: 25px;
+  color: white;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif; /* Add for <button> */
+  font-size: 1rem; /* Add for <button> */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.event-card .book-btn {
+  /* This ensures the button in the card is centered */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.book-btn:hover {
+  background: linear-gradient(135deg, #b06fff, #a64dff);
+  box-shadow: 0 0 20px #b06fff;
+}
+
+/* ---------- READ MORE LINK ---------- */
+.event-card .readmore {
+  margin-top: 5px;
+}
+
+.event-card .readmore a {
+  color: #d6a8ff;
+  text-decoration: underline;
+  font-size: 0.9rem;
+}
+
+.event-card .readmore a:hover {
+  color: #b06fff;
+}
+
+/* ---------- ANIMATION ---------- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(1.05); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ---------- HIGHLIGHT CARD ON CLICK ---------- */
+.event-card.highlight {
+  box-shadow: 0 0 35px #b06fff;
+  transform: translateY(-5px);
+  transition: all 0.5s ease;
+}
+
+/* ---------- MODAL STYLES ---------- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px); /* Nice blurry background effect */
+}
+
+.modal-content {
+  background-color: #1a0033;
+  margin: 5% auto;
+  padding: 30px; /* Increased padding */
+  border-radius: 10px;
+  border: 1px solid rgba(170, 100, 255, 0.3); /* Add border to match cards */
+  width: 90%;
+  max-width: 500px;
+  color: white;
+  position: relative;
+  text-align: left; /* Changed to left for form layout */
+  animation: fadeIn 0.6s ease-in;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  color: #d6a8ff;
+  text-align: center; /* Keep title centered */
+  text-shadow: 0 0 15px #a04fff; /* Match heading style */
+}
+
+.close-btn {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 28px; /* Slightly larger */
+  cursor: pointer;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #d6a8ff;
+}
+
+/* =================================================================== */
+/* --- ADDED --- Styles for the New Booking Form within the Modal      */
+/* =================================================================== */
+
+#bookingForm {
+  display: flex;
+  flex-direction: column;
+  gap: 18px; /* Adds space between form elements */
+  margin-top: 25px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #d8c7ff;
+  font-size: 0.9rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="number"],
+.form-group input[type="date"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #5c3c8c;
+  border-radius: 8px;
+  background-color: #0a0015;
+  color: #fff;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box; /* Important for padding */
+  transition: all 0.3s ease;
+}
+
+.form-group input::placeholder {
+  color: #8a7d9c;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #d6a8ff;
+  box-shadow: 0 0 10px rgba(214, 168, 255, 0.5);
+}
+
+.participant-limits-text {
+  font-size: 0.8rem;
+  color: #aaa;
+  margin-top: 5px;
+  font-style: italic;
+}
+
+.payment-options {
+  padding-top: 5px;
+}
+
+.payment-options label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ddd;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.payment-options input[type="radio"] {
+  accent-color: #d6a8ff; /* Modern way to color radio buttons */
+}
+
+#bookingForm .book-btn {
+  width: 100%; /* Make form button full width */
+  margin-top: 15px;
+}
+
+/* Form message styling */
+.form-message {
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  display: none; /* Hidden by default */
+}
+
+.form-message.show {
+  display: block; /* Shown via JS */
+}
+
+.form-message.success {
+  background-color: rgba(40, 167, 69, 0.3);
+  border: 1px solid #28a745;
+  color: #a7f7b9;
+}
+
+.form-message.error {
+  background-color: rgba(220, 53, 69, 0.3);
+  border: 1px solid #dc3545;
+  color: #f7a7b1;
+}
+
+.form-message.info {
+  background-color: rgba(23, 162, 184, 0.3);
+  border: 1px solid #17a2b8;
+  color: #a7eaf7;
+}

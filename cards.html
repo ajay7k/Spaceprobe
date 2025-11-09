@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clickable 3D Cards</title>
+  <link rel="stylesheet" href="cards.css">
+</head>
+<body>
+  <div class="centered">
+
+    <a href="https://example.com/rover" style="text-decoration: none; color: inherit;">
+      <div class="card border-left-behind">
+        <div class="shadow" style="--url: url('/img/rover.png')"></div>
+        <div class="image background" style="--url: url('/img/backround.jpg')"></div>
+        <div class="image cutout" style="--url: url('/img/rover.png')"></div>
+        <div class="content">
+          <h2>Rover</h2>
+          <p>Explore the Mars Rover</p>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://example.com/m" style="text-decoration: none; color: inherit;">
+      <div class="card border-right-behind border-bottom-behind">
+        <div class="shadow" style="--url: url('https://i.ibb.co/DC0MbxS/m-full.png')"></div>
+        <div class="image background" style="--url: url('https://i.ibb.co/ZdGBm4K/m-background.png')"></div>
+        <div class="image cutout" style="--url: url('https://i.ibb.co/RC70XmC/m-cutout.png')"></div>
+        <div class="content">
+          <h2>Mission</h2>
+          <p>Discover new frontiers</p>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://example.com/b" style="text-decoration: none; color: inherit;">
+      <div class="card border-left-behind">
+        <div class="shadow" style="--url: url('https://i.ibb.co/gSBp82C/b-full.png')"></div>
+        <div class="image background" style="--url: url('https://i.ibb.co/MDBcyMW/b-background.png')"></div>
+        <div class="image cutout" style="--url: url('https://i.ibb.co/bQNgD6y/b-cutout.png')"></div>
+        <div class="content">
+          <h2>Base</h2>
+          <p>Explore base structures</p>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+  <script src="cards.js"></script>
+</body>
+</html>

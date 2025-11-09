@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MRPFTLM5BM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MRPFTLM5BM');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support Us | SpaceProbe Pvt Ltd</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/common.css" />
+  <link rel="stylesheet" href="../css/support.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+  <!-- JS -->
+  <script src="../js/common.js" defer></script>
+  <script src="../js/navbar.js" defer></script>
+  <script src="../js/modal.js" defer></script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.7);
+    }
+
+    .modal .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .modal .close:hover {
+      color: #000;
+    }
+
+    .qr-container {
+      display: flex;
+      justify-content: space-around;
+      margin: 20px 0;
+    }
+
+    .qr {
+      width: 120px;
+      height: 120px;
+    }
+
+    .modal-note {
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 10px;
+    }
+
+    /* Input text color */
+    input, select {
+      color: #FFD369; /* yellow text */
+      background-color: #000; /* optional dark bg */
+      border: 1px solid #FFD369;
+      padding: 8px;
+      border-radius: 5px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div id="navbar-container"></div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Support SpaceProbe’s Mission</h1>
+      <p>Empowering young minds. Advancing space science. Building India’s space research future.</p>
+      <a href="whysupport.html" class="btn-primary">Learn More</a>
+    </div>
+  </section>
+
+  <!-- WHY SUPPORT -->
+  <section id="why-support" class="why-support">
+    <h2>Why Support SpaceProbe</h2>
+    <p class="intro">
+      Supporting SpaceProbe Pvt. Ltd. means investing in the future of India’s space science ecosystem.
+      It’s a commitment to empower young minds, strengthen indigenous research, and connect education with innovation.
+    </p>
+    <div class="support-grid">
+      <div class="support-card">
+        <h3>1. Nurturing the Next Generation</h3>
+        <p class="card-text">
+          SpaceProbe emerged within a university where curiosity and research thrive. Your contributions fund fellowships,
+          training, and tools for self-funded students so financial barriers never limit talent.
+        </p>
+        <a href="whysupport.html" class="btn-secondary read-more" target="_blank">Read More</a>
+      </div>
+      <div class="support-card">
+        <h3>2. Building India’s Self-Reliance</h3>
+        <p class="card-text">
+          We develop indigenous tools and instruments serving both national missions and academia.
+          Your support enhances our labs, modeling tools, and data systems that strengthen India’s scientific autonomy.
+        </p>
+        <a href="whysupport.html" class="btn-secondary read-more" target="_blank">Read More</a>
+      </div>
+      <div class="support-card">
+        <h3>3. From Academia to National Impact</h3>
+        <p class="card-text">
+          Recognized by ISRO and SCOSTEP, SpaceProbe bridges research with national service.
+          Your backing sustains student-led innovations that impact satellite safety and communication reliability.
+        </p>
+        <a href="whysupport.html" class="btn-secondary read-more" target="_blank">Read More</a>
+      </div>
+      <div class="support-card">
+        <h3>4. Creating Infrastructure for Innovation</h3>
+        <p class="card-text">
+          With your help, we can establish a Space Weather & Geospatial Innovation Lab—equipped with advanced sensors and computing systems.
+        </p>
+        <a href="whysupport.html" class="btn-secondary read-more" target="_blank">Read More</a>
+      </div>
+      <div class="support-card">
+        <h3>5. A Platform that Gives Back</h3>
+        <p class="card-text">
+          Every contribution multiplies its effect, empowering students, fostering research, and inspiring society through
+          outreach and education programs.
+        </p>
+        <a href="whysupport.html" class="btn-secondary read-more" target="_blank">Read More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW YOU CAN HELP -->
+  <section id="how-help" class="how-help">
+    <h2>How You Can Help</h2>
+    <div class="help-options">
+      <div class="help-card">
+        <i class="fa-solid fa-hand-holding-heart"></i>
+        <h3>Donate</h3>
+        <p>Support research, student fellowships, and lab infrastructure to advance space science in India.</p>
+        <button class="btn-primary open-donate-modal">Donate Now</button>
+      </div>
+      <div class="help-card">
+        <i class="fa-solid fa-users"></i>
+        <h3>Volunteer</h3>
+        <p>Contribute time, mentorship, or help with events to inspire future scientists.</p>
+        <button class="btn-primary volunteer-btn">Join Us</button>
+      </div>
+      <div class="help-card">
+        <i class="fa-solid fa-handshake"></i>
+        <h3>Collaborate</h3>
+        <p>Partner with us in research, innovation, or STEM initiatives to create impact.</p>
+        <button class="btn-primary collaborate-btn">Collaborate</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- DONATE MODAL -->
+  <div id="donateModal" class="modal donate-modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Support Our Mission</h2>
+      <p>Your contribution helps us continue our scientific outreach and research initiatives.</p>
+      <form class="donation-form">
+        <div class="form-group">
+          <label for="donor-name">Full Name (optional)</label>
+          <input type="text" id="donor-name" name="donor-name" placeholder="Enter your full name">
+        </div>
+        <div class="form-group">
+          <label for="donor-email">Email Address (optional)</label>
+          <input type="email" id="donor-email" name="donor-email" placeholder="Enter your email">
+        </div>
+        <div class="form-group">
+          <label for="donor-mobile">Mobile Number (optional)</label>
+          <input type="tel" id="donor-mobile" name="donor-mobile" placeholder="Enter your mobile number">
+        </div>
+        <button type="button" class="btn-primary pay-btn">Proceed to Pay</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- VOLUNTEER MODAL -->
+  <div id="volunteerModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Volunteer With Us</h2>
+      <p>Fill the form to let us know how you’d like to contribute as a volunteer.</p>
+      <form class="contribution-form">
+        <div class="form-group">
+          <label for="vol-name">Full Name (optional)</label>
+          <input type="text" id="vol-name" name="vol-name" placeholder="Enter your full name">
+        </div>
+        <div class="form-group">
+          <label for="vol-email">Email Address (optional)</label>
+          <input type="email" id="vol-email" name="vol-email" placeholder="Enter your email">
+        </div>
+        <div class="form-group">
+          <label for="vol-mobile">Mobile Number (optional)</label>
+          <input type="tel" id="vol-mobile" name="vol-mobile" placeholder="Enter your mobile number">
+        </div>
+        <button type="button" class="btn-primary submit-vol-btn">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- COLLABORATE MODAL -->
+  <div id="collabModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Collaborate With SpaceProbe</h2>
+      <p>Fill the form to discuss potential collaboration opportunities.</p>
+      <form class="contribution-form">
+        <div class="form-group">
+          <label for="collab-name">Full Name </label>
+          <input type="text" id="collab-name" name="collab-name" placeholder="Enter your full name">
+        </div>
+        <div class="form-group">
+          <label for="collab-organisation">Organisation</label>
+          <input type="text" id="collab-organisation" name="organisation" placeholder="Enter your organisation">
+        </div>
+        <div class="form-group">
+          <label for="collab-email">Email Address</label>
+          <input type="email" id="collab-email" name="collab-email" placeholder="Enter your email">
+        </div>
+        <div class="form-group">
+          <label for="collab-mobile">Mobile Number </label>
+          <input type="tel" id="collab-mobile" name="collab-mobile" placeholder="Enter your mobile number">
+        </div>
+        <div class="form-group">
+          <label for="collab-type">Type of Collaboration</label>
+          <select id="collab-type" name="collab-type">
+            <option value="" selected disabled>Select an option</option>
+            <option value="Research">Research</option>
+            <option value="CSR / STEM Initiatives">CSR / STEM Initiatives</option>
+            <option value="Data Analysis">Data Analysis</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <button type="button" class="btn-primary submit-collab-btn">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- FINAL CONTRIBUTION FORM -->
+  <section class="future" id="future">
+    <h2>Your Support, Their Future</h2>
+    <p>
+      Every great discovery begins with belief — belief in people, in ideas, and in the power of science to make a difference.
+      By supporting SpaceProbe, you’re fueling dreams, enabling discovery, and building India’s foundation in space science and technology.
+    </p>
+
+    <form class="contribution-form">
+      <div class="form-group">
+        <label for="name">Full Name (optional)</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name">
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address (optional)</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email">
+      </div>
+      <div class="form-group">
+        <label for="mobile">Mobile Number (optional)</label>
+        <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number">
+      </div>
+      <div class="form-group">
+        <label for="contribution">Type of Contribution</label>
+        <select id="contribution" name="contribution">
+          <option value="" selected disabled>Select an option</option>
+          <option value="Individual Contribution">Individual Contribution</option>
+          <option value="Corporate Contribution">Corporate Contribution</option>
+        </select>
+      </div>
+      <button type="button" class="btn-primary pay-btn">
+        <i class="fa-solid fa-money-bill-wave"></i> Proceed to Contribute
+      </button>
+    </form>
+
+    <p class="form-note">
+      You can choose to share your details or simply select a contribution type — every bit of support helps our mission grow.
+    </p>
+  </section>
+
+  <!-- PAYMENT MODAL -->
+  <div id="paymentModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Contribute to SpaceProbe</h2>
+      <p>Choose a payment method to support our mission:</p>
+
+      <div class="qr-container">
+        <div class="payment-option">
+          <img src="../img/upi.jpeg" alt="UPI QR" class="qr">
+          <p>UPI Payment</p>
+        </div>
+
+        <div class="payment-option neft-option">
+          <i class="fa-solid fa-university" style="font-size:50px; color:#FFD369;"></i>
+          <p>NEFT Transfer</p>
+              Account: 50200112838950<br>
+          IFSC: HDFC0001573<br>
+          <small id="neftDetails">Beneficiary: SpaceProbe Pvt Ltd</small>
+          <button class="copy-btn">Copy Details</button>
+        </div>
+      </div>
+
+      <button id="paidBtn" class="btn-primary">I Paid</button>
+      <p class="modal-note" id="paidMsg" style="display:none;">Thank you for your contribution! 🎉</p>
+    </div>
+  </div>
+
+  <footer>
+    <div id="footer-container"></div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const cards = document.querySelectorAll('.support-card, .help-card');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      cards.forEach(el => observer.observe(el));
+
+      // Payment Modal
+      const modal = document.getElementById("paymentModal");
+      const btn = document.querySelector(".pay-btn");
+      const span = modal.querySelector(".close");
+
+      btn.addEventListener("click", () => {
+        modal.style.display = "block";
+      });
+
+      span.addEventListener("click", () => {
+        modal.style.display = "none";
+      });
+
+      window.addEventListener("click", (e) => {
+        if (e.target == modal) modal.style.display = "none";
+      });
+    });
+  </script>
+</body>
+</html>
